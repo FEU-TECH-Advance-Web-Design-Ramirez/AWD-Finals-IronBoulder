@@ -79,3 +79,29 @@ main{
 .btn-get-started:hover {
     background-color: #8AB5E3; 
 }
+
+/*Section 2*/
+.section-2{
+    font-family: arial;
+    background: #359BD1;
+    height: 55vh; 
+}
+
+.Sec2H2, .Sec2Text {
+    text-align: center;
+    color: white;
+}
+
+.Sec2H2 {
+    width: 100%;
+    font-size: 2rem;
+    padding-top: 100px;
+}
+
+.Sec2Text {
+    font-size: 1.4rem;
+    margin-top: 10px;
+    width: 100%;
+    padding-left: 20%;
+    padding-right: 20%;
+}
