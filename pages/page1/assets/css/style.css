@@ -15,11 +15,10 @@ main{
     background-color: rgb(255, 255, 255);
     text-align: center;
 }
-
 /* Section 1 */
 /* Section 1: About Us */
 .section-1 {
-    background: url('/AWD-TEST--IRON-BOULDER/assets/img/AboutusBG.jpg') no-repeat center center/cover;
+    background: url('/assets/img/AboutusBG.jpg') no-repeat center center/cover;
     height: 50vh;
     display: flex;
     align-items: center;

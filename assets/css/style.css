@@ -16,7 +16,6 @@ main{
     background-color: rgb(255, 255, 255);
     text-align: center;
 }
-
 /* Section 1 */
 .section-1 {
     font-family: arial;
@@ -80,6 +79,7 @@ main{
     background-color: #8AB5E3; 
 }
 
+
 /*Section 2*/
 .section-2{
     font-family: arial;
@@ -105,7 +105,6 @@ main{
     padding-left: 20%;
     padding-right: 20%;
 }
-
 /*Section 3*/
 /* Section 3: Our Services */
 .section-3, p{
@@ -160,6 +159,7 @@ main{
     font-weight: bold;
     color: #003e68;
 }
+
 /* header */
 header{
     background: #3674B5;
@@ -240,3 +240,4 @@ footer{
     text-align: center;
     padding-top: 10px;
 }
+
