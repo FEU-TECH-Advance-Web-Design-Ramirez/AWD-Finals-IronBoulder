@@ -44,3 +44,43 @@ main{
 .overlay p {
     font-size: 1.2rem;
 }
+
+/* Section 2: Our Team */
+.section-2 {
+    background: #A9C9F5;
+    padding: 50px 0;
+    text-align: center;
+}
+
+.section-2 h1 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: #385F87;
+}
+
+.team-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.team-member {
+    background: white;
+    padding: 15px;
+    border-radius: 10px;
+    width: 180px;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.team-member img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+.team-member p {
+    margin-top: 10px;
+    font-weight: bold;
+    padding-bottom: 5px;
+}
