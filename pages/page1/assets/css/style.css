@@ -84,3 +84,84 @@ main{
     font-weight: bold;
     padding-bottom: 5px;
 }
+
+/* header */
+header{
+    background: #3674B5;
+    color: rgb(255, 255, 255);
+    padding: 30px;
+}
+/* logo */
+.logo{
+ float: left;
+ font-size: 2rem;
+}
+/*Navbar*/
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #3674B5;
+  }
+  
+  li {
+    float: right;
+  }
+  
+  li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+  }
+  
+  li a:hover {
+    background-color: #4da3ff;
+  }
+/* footer */
+footer{
+    font-size: small;
+    color: white;
+    background-color: #3674B5;
+    padding: 35px;
+    height: 50%;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: center;
+    gap: 100px;
+}
+
+.footer-box1 {
+    background: #3674B5;
+    padding: 20px;
+    width: 300px;
+    text-align: left;
+    padding-bottom: 35px;
+    font-size: 1.5rem;
+}
+
+.footer-box2 {
+    background: #3674B5;
+    padding: 20px;
+    width: 300px;
+    text-align: left;
+    padding-bottom: 35px;
+}
+
+.footer-box3 {
+    background: #3674B5;
+    padding: 20px;
+    width: 300px;
+    text-align: left;
+    padding-bottom: 35px;
+}
+
+.footer2{
+    font-size: 1rem;
+    text-align: center;
+    padding-top: 10px;
+}
