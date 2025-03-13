@@ -15,3 +15,32 @@ main{
     background-color: rgb(255, 255, 255);
     text-align: center;
 }
+
+/* Section 1 */
+/* Section 1: About Us */
+.section-1 {
+    background: url('/AWD-TEST--IRON-BOULDER/assets/img/AboutusBG.jpg') no-repeat center center/cover;
+    height: 50vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    position: relative;
+}
+
+.overlay {
+    background: rgba(0, 86, 156, 0.329); /* Dark overlay for readability */
+    padding: 55px;
+    color: white;
+    width: 70%;
+    border-radius: 15px;
+}
+
+.overlay h1 {
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+}
+
+.overlay p {
+    font-size: 1.2rem;
+}
