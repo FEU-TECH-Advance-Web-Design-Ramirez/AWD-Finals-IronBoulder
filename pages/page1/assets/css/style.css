@@ -164,3 +164,91 @@ footer{
     text-align: center;
     padding-top: 10px;
 }
+
+/* Responsive Media Queries */
+
+/* 1920x1080 (Default large screens) */
+@media screen and (max-width: 1920px) {
+    .overlay {
+        width: 60%;
+    }
+    .overlay h1 {
+        font-size: 2.8rem;
+    }
+    .overlay p {
+        font-size: 1.3rem;
+    }
+    .team-member {
+        width: 200px;
+    }
+}
+
+/* 1440x1000 */
+@media screen and (max-width: 1440px) {
+    .overlay {
+        width: 65%;
+    }
+    .overlay h1 {
+        font-size: 2.5rem;
+    }
+    .overlay p {
+        font-size: 1.2rem;
+    }
+    .team-member {
+        width: 180px;
+    }
+}
+
+/* 1024x768 */
+@media screen and (max-width: 1024px) {
+    .overlay {
+        width: 75%;
+        padding: 40px;
+    }
+    .overlay h1 {
+        font-size: 2rem;
+    }
+    .overlay p {
+        font-size: 1.1rem;
+    }
+    .team-container {
+        flex-wrap: wrap;
+    }
+    .team-member {
+        width: 160px;
+    }
+}
+
+/* 375x667 (Mobile screens) */
+@media screen and (max-width: 375px) {
+    .overlay {
+        width: 90%;
+        padding: 30px;
+    }
+    .overlay h1 {
+        font-size: 1.8rem;
+    }
+    .overlay p {
+        font-size: 1rem;
+    }
+    .team-container {
+        flex-direction: column;
+        align-items: center;
+    }
+    .team-member {
+        width: 80%;
+    }
+    ul {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+    }
+    li {
+        float: none;
+    }
+    .footer-container {
+        flex-direction: column;
+        text-align: center;
+        gap: 20px;
+    }
+}

@@ -241,3 +241,132 @@ footer{
     padding-top: 10px;
 }
 
+/* Default Styles (Desktop - 1920px) */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    width: 100%;
+    height: 100%;
+    overflow-x: hidden;
+}
+
+/* Responsive Media Queries */
+
+/* 1440px screens */
+@media (max-width: 1440px) {
+    .section-1 {
+        height: 65vh; 
+        display: flex;
+        padding-left: 5%;
+    }
+    .Sec1H1 {
+        font-size: 1.8rem;
+    }
+    .Sec1Text {
+        font-size: 1rem;
+    }
+    .section-2{
+        height: 40vh;
+    }
+    .btn-get-started {
+        font-size: 1rem;
+        padding: 8px 20px;
+    }
+    .DocWoman {
+        width: 40%;
+        right: 5%;
+    }
+}
+
+/* 1024px screens */
+@media (max-width: 1024px) {
+    .section-1 {
+        height: auto;
+        flex-direction: column;
+        text-align: center;
+        padding: 5%;
+    }
+    .Sec1H1, .Sec1Text {
+        width: 100%;
+        text-align: center;
+    }
+    .GetStarted {
+        text-align: center;
+        padding-left: 0;
+    }
+    .DocWoman {
+        width: 30%;
+        position: relative;
+        margin: 20px auto;
+    }
+    .services-container {
+        flex-wrap: wrap;
+        gap: 20px;
+    }
+}
+
+/* 375px screens (Mobile) */
+@media (max-width: 375px) {
+    header {
+        text-align: left;
+        padding: 20px;
+    }
+    ul {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    li {
+        float: none;
+        width: 100%;
+    }
+    .section-1 {
+        padding: 10px;
+    }
+    .Sec1H1 {
+        font-size: 1.5rem;
+    }
+    .Sec1Text {
+        font-size: 0.9rem;
+    }
+    .section-2{
+        height: 30vh;
+    }
+    .Sec2H2 {
+        width: 100%;
+        font-size: 1rem;
+        padding-top: 25px;
+    }
+    
+    .Sec2Text {
+        font-size: 1rem;
+        margin-top: 10px;
+        width: 100%;
+        padding-left: 20%;
+        padding-right: 20%;
+    }   
+    .btn-get-started {
+        font-size: 0.9rem;
+        padding: 6px 15px;
+    }
+    .DocWoman {
+        width: 80%;
+    }
+    .services-container {
+        flex-direction: column;
+        align-items: center;
+    }
+    .service-box {
+        width: 60%;
+    }
+    .footer-container {
+        flex-direction: column;
+        text-align: center;
+        gap: 20px;
+    }
+}
+
