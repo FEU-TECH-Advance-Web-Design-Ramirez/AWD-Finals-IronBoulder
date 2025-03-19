@@ -88,7 +88,8 @@ main{
 header{
     background: #3674B5;
     color: rgb(255, 255, 255);
-    padding: 30px;
+    padding: 15px;
+    font-family: arial;
 }
 /* logo */
 .logo{
