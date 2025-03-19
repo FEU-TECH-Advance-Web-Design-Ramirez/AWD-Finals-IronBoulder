@@ -243,6 +243,8 @@ footer{
     font-size: 1rem;
     text-align: center;
     padding-top: 10px;
+    width: 60%;
+    margin: auto;
 }
 
 /* Default Styles (Desktop - 1920px) */
