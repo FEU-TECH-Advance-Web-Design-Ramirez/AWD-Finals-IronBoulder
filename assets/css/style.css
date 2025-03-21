@@ -167,13 +167,17 @@ main{
 header{
     background: #3674B5;
     color: rgb(255, 255, 255);
-    padding: 15px;
+    padding: 20px;
     font-family: arial;
+
 }
 /* logo */
-.logo{
- float: left;
- font-size: 2rem;
+header img{
+    height: 40px;
+    width: 180px;
+    margin: 0;
+    padding: 0;
+    float: left;
 }
 /*Navbar*/
 ul {
