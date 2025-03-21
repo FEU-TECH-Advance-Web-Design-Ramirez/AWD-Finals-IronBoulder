@@ -26,11 +26,12 @@ main{
     flex-direction: column;
     justify-content: center;
     padding-left: 5%;
+    padding: 22%;
 }
 
 /* Text content */
 .Sec1H1, .Sec1Text {
-    width: 50%;
+    width: 70%;
     text-align: left;
     color: white;
 }
@@ -38,12 +39,9 @@ main{
 .Sec1H1 {
     font-size: 2rem;
 }
-
-.Sec1Text {
+.section-1 p{
     font-size: 1.2rem;
-    margin-top: 10px;
 }
-
 /* Doctor Image */
 .DocWoman {
     position: absolute;
@@ -68,11 +66,14 @@ main{
     display: inline-block;
     background-color: #A9C9F5; 
     color: #fff;
-    font-size: 1.2rem;
-    padding: 10px 25px;
-    border-radius: 25px; 
+    font-size: 1.5rem;
+    border-radius: 20px; 
     text-decoration: none;
     transition: 0.3s ease-in-out;
+    height: 40px;
+    width: 180px;
+    text-align: center;
+    box-shadow: 3px 3px 4px rgba(0, 0, 0, 0.6);
 }
 
 .btn-get-started:hover {
@@ -83,27 +84,31 @@ main{
 /*Section 2*/
 .section-2{
     font-family: arial;
-    background: #359BD1;
-    height: 55vh; 
-}
-
-.Sec2H2, .Sec2Text {
+    background: #359BD1; 
+    width: auto;
     text-align: center;
     color: white;
+    height: 100vh;
+    padding-bottom: 25%;
 }
-
 .Sec2H2 {
     width: 100%;
     font-size: 2rem;
-    padding-top: 100px;
+    margin-bottom: 20px;
+    padding-top: 30px;
 }
-
+.section-2 hr{
+    margin-top: 50px;
+    width: 20%;
+    margin: auto;
+    border: 1px solid white;
+}
 .Sec2Text {
-    font-size: 1.4rem;
+    font-size: 1.2rem;
     margin-top: 10px;
-    width: 100%;
-    padding-left: 20%;
-    padding-right: 20%;
+    text-align: center;
+    padding-left: 13%;
+    padding-right: 13%;
 }
 /*Section 3*/
 /* Section 3: Our Services */
@@ -117,10 +122,16 @@ main{
     text-align: center;
     padding: 60px 0;
 }
-
+.section-3 hr{
+    margin-top: 50px;
+    width: 13%;
+    margin: auto;
+    border: 1px solid #003e68;
+    margin-bottom: 50px;
+}
 .section-3 h1 {
-    font-size: 2.5rem;
-    margin-bottom: 40px;
+    font-size: 3rem;
+    margin-bottom: 20px;
 }
 
 .services-container {
@@ -164,12 +175,17 @@ main{
 header{
     background: #3674B5;
     color: rgb(255, 255, 255);
-    padding: 30px;
+    padding: 15px;
+    font-family: arial;
+
 }
 /* logo */
-.logo{
- float: left;
- font-size: 2rem;
+header img{
+    height: 40px;
+    width: 180px;
+    margin: 0;
+    padding: 0;
+    float: left;
 }
 /*Navbar*/
 ul {
@@ -225,6 +241,7 @@ footer{
     width: 300px;
     text-align: left;
     padding-bottom: 35px;
+    font-family: arial;
 }
 
 .footer-box3 {
@@ -233,33 +250,56 @@ footer{
     width: 300px;
     text-align: left;
     padding-bottom: 35px;
+    font-family: arial;
 }
 
 .footer2{
     font-size: 1rem;
     text-align: center;
     padding-top: 10px;
+    width: 60%;
+    margin: auto;
+    font-family: arial;
 }
-
-/* Default Styles (Desktop - 1920px) */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-body {
-    width: 100%;
-    height: 100%;
-    overflow-x: hidden;
-}
-
 /* Responsive Media Queries */
-
+@media (max-width: 1920px) {
+    .section-1 {
+        height: 50vh; 
+        display: flex;
+        padding-left: 5%;
+    }
+    .section-1 img{
+        width: 80%;
+    }
+    .Sec1H1 {
+        font-size: 2.5rem;
+    }
+    .Sec1Text {
+        font-size: 1.2rem;
+    }
+    .section-2{
+        height: 25vh;
+    }
+    .section-2 hr{
+        margin-bottom: 25px;
+    }
+    .Sec2H2 {
+        font-size: 2.5rem;
+    }
+    .Sec2Text {
+        font-size: 1.2rem;
+    }
+    .btn-get-started {
+        font-size: 1.5rem;
+        padding: 10px 25px;
+        height: 100%;
+    }
+}
+    
 /* 1440px screens */
 @media (max-width: 1440px) {
     .section-1 {
-        height: 65vh; 
+        height: 50vh; 
         display: flex;
         padding-left: 5%;
     }
@@ -270,7 +310,7 @@ body {
         font-size: 1rem;
     }
     .section-2{
-        height: 40vh;
+        height: 25vh;
     }
     .btn-get-started {
         font-size: 1rem;
@@ -281,7 +321,6 @@ body {
         right: 5%;
     }
 }
-
 /* 1024px screens */
 @media (max-width: 1024px) {
     .section-1 {
@@ -291,23 +330,20 @@ body {
         padding: 5%;
     }
     .Sec1H1, .Sec1Text {
-        width: 100%;
-        text-align: center;
+        width: 60%;
+        text-align: left;
     }
     .GetStarted {
-        text-align: center;
-        padding-left: 0;
+        padding-left: 100px;
     }
     .DocWoman {
-        width: 30%;
-        position: relative;
-        margin: 20px auto;
+        float: right;
     }
     .services-container {
         flex-wrap: wrap;
-        gap: 20px;
-    }
+        gap: 20px;}
 }
+
 
 /* 375px screens (Mobile) */
 @media (max-width: 375px) {
@@ -325,13 +361,25 @@ body {
         width: 100%;
     }
     .section-1 {
-        padding: 10px;
+        padding: 50px;
     }
     .Sec1H1 {
-        font-size: 1.5rem;
+        font-size: 1.2rem;
+        text-align: center;
+        width: 100%;
     }
     .Sec1Text {
-        font-size: 0.9rem;
+        font-size: 0.5rem;
+        width: 100%;
+        text-align: center;
+    }
+    .section-1 img{
+        display: none;
+    }
+    .GetStarted{
+        text-align: center;
+        padding-left: 0;
+
     }
     .section-2{
         height: 30vh;
@@ -369,4 +417,3 @@ body {
         gap: 20px;
     }
 }
-
