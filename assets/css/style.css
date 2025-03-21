@@ -365,13 +365,25 @@ footer{
         width: 100%;
     }
     .section-1 {
-        padding: 10px;
+        padding: 50px;
     }
     .Sec1H1 {
-        font-size: 1.5rem;
+        font-size: 1.2rem;
+        text-align: center;
+        width: 100%;
     }
     .Sec1Text {
-        font-size: 0.9rem;
+        font-size: 0.5rem;
+        width: 100%;
+        text-align: center;
+    }
+    .section-1 img{
+        display: none;
+    }
+    .GetStarted{
+        text-align: center;
+        padding-left: 0;
+
     }
     .section-2{
         height: 30vh;
