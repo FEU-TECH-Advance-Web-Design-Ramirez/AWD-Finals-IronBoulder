@@ -84,22 +84,18 @@ main{
 /*Section 2*/
 .section-2{
     font-family: arial;
-    background: #359BD1;
-    height: 100px; 
-    padding: auto;
-    margin: auto;
-}
-
-.Sec2H2, .Sec2Text {
+    background: #359BD1; 
+    width: auto;
     text-align: center;
     color: white;
+    height: 100vh;
+    padding-bottom: 25%;
 }
-
 .Sec2H2 {
     width: 100%;
     font-size: 2rem;
-    padding-top: 40px;
     margin-bottom: 20px;
+    padding-top: 30px;
 }
 .section-2 hr{
     margin-top: 50px;
