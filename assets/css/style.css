@@ -38,12 +38,9 @@ main{
 .Sec1H1 {
     font-size: 2rem;
 }
-
-.Sec1Text {
+.section-1 p{
     font-size: 1.2rem;
-    margin-top: 10px;
 }
-
 /* Doctor Image */
 .DocWoman {
     position: absolute;
@@ -87,7 +84,9 @@ main{
 .section-2{
     font-family: arial;
     background: #359BD1;
-    height: 55vh; 
+    height: 100px; 
+    padding: auto;
+    margin: auto;
 }
 
 .Sec2H2, .Sec2Text {
@@ -98,15 +97,21 @@ main{
 .Sec2H2 {
     width: 100%;
     font-size: 2rem;
-    padding-top: 100px;
+    padding-top: 40px;
+    margin-bottom: 20px;
 }
-
+.section-2 hr{
+    margin-top: 50px;
+    width: 20%;
+    margin: auto;
+    border: 1px solid white;
+}
 .Sec2Text {
-    font-size: 1.4rem;
+    font-size: 1.2rem;
     margin-top: 10px;
-    width: 100%;
-    padding-left: 20%;
-    padding-right: 20%;
+    text-align: center;
+    padding-left: 13%;
+    padding-right: 13%;
 }
 /*Section 3*/
 /* Section 3: Our Services */
@@ -120,10 +125,16 @@ main{
     text-align: center;
     padding: 60px 0;
 }
-
+.section-3 hr{
+    margin-top: 50px;
+    width: 13%;
+    margin: auto;
+    border: 1px solid #003e68;
+    margin-bottom: 50px;
+}
 .section-3 h1 {
-    font-size: 2.5rem;
-    margin-bottom: 40px;
+    font-size: 3rem;
+    margin-bottom: 20px;
 }
 
 .services-container {
