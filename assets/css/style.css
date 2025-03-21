@@ -26,11 +26,12 @@ main{
     flex-direction: column;
     justify-content: center;
     padding-left: 5%;
+    padding: 22%;
 }
 
 /* Text content */
 .Sec1H1, .Sec1Text {
-    width: 50%;
+    width: 70%;
     text-align: left;
     color: white;
 }
