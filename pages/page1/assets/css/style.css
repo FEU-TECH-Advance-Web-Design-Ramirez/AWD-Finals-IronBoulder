@@ -50,10 +50,11 @@ main{
     background: #A9C9F5;
     padding: 50px 0;
     text-align: center;
+    font-family: arial;
 }
 
 .section-2 h1 {
-    font-size: 2rem;
+    font-size: 2.2rem;
     margin-bottom: 20px;
     color: #385F87;
 }
@@ -154,6 +155,7 @@ footer{
     width: 300px;
     text-align: left;
     padding-bottom: 35px;
+    font-family: arial;
 }
 
 .footer-box3 {
@@ -162,6 +164,7 @@ footer{
     width: 300px;
     text-align: left;
     padding-bottom: 35px;
+    font-family: arial;
 }
 
 .footer2{
@@ -170,6 +173,7 @@ footer{
     padding-top: 10px;
     width: 60%;
     margin: auto;
+    font-family: arial;
 }
 
 /* Responsive Media Queries */
