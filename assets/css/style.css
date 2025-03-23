@@ -278,7 +278,8 @@ footer{
         font-size: 1.2rem;
     }
     .section-2{
-        height: 25vh;
+        height: 20vh;
+        padding-bottom: 18%;
     }
     .section-2 hr{
         margin-bottom: 25px;
