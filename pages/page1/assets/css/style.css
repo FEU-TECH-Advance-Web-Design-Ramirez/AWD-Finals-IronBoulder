@@ -25,13 +25,14 @@ main{
     justify-content: center;
     text-align: center;
     position: relative;
+    font-family: Arial;
 }
 
 .overlay {
     background: rgba(0, 86, 156, 0.329); /* Dark overlay for readability */
     padding: 55px;
     color: white;
-    width: 70%;
+    width: 75%;
     border-radius: 15px;
 }
 
