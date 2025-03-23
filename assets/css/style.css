@@ -331,6 +331,10 @@ footer{
         text-align: center;
         padding: 5%;
     }
+    .section-2{
+        height: 30vh;
+        padding-bottom: 30%;
+    }
     .Sec1H1, .Sec1Text {
         width: 60%;
         text-align: left;
