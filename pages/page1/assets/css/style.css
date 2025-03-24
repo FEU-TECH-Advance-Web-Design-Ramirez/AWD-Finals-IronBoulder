@@ -25,13 +25,14 @@ main{
     justify-content: center;
     text-align: center;
     position: relative;
+    font-family: Arial;
 }
 
 .overlay {
     background: rgba(0, 86, 156, 0.329); /* Dark overlay for readability */
     padding: 55px;
     color: white;
-    width: 70%;
+    width: 75%;
     border-radius: 15px;
 }
 
@@ -49,10 +50,11 @@ main{
     background: #A9C9F5;
     padding: 50px 0;
     text-align: center;
+    font-family: arial;
 }
 
 .section-2 h1 {
-    font-size: 2rem;
+    font-size: 2.2rem;
     margin-bottom: 20px;
     color: #385F87;
 }
@@ -153,6 +155,8 @@ footer{
     width: 300px;
     text-align: left;
     padding-bottom: 35px;
+    font-family: arial;
+    line-height: 1.5;
 }
 
 .footer-box3 {
@@ -161,6 +165,8 @@ footer{
     width: 300px;
     text-align: left;
     padding-bottom: 35px;
+    font-family: arial;
+    line-height: 1.5;
 }
 
 .footer2{
@@ -169,6 +175,7 @@ footer{
     padding-top: 10px;
     width: 60%;
     margin: auto;
+    font-family: arial;
 }
 
 /* Responsive Media Queries */
