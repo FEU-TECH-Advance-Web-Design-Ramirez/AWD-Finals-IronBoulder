@@ -1,4 +1,4 @@
-//Appointmemnt reminder
+//Appointmemnt Tracker
 // Appointment Reminder System
 let events = JSON.parse(localStorage.getItem("events")) || []; // Load events from local storage
 
@@ -166,7 +166,7 @@ function daysInMonth(iMonth, iYear) {
 // Show calendar initially
 showCalendar(currentMonth, currentYear);
 
-//log a symptom
+//Symptom logger
 // Initialize symptoms array
 let symptoms = [];
 
@@ -280,7 +280,7 @@ loadSymptomsFromJSON(); // Load symptoms on page load
 
 
 
-// script for medication reminder
+//Medication Reminder
         // Function to update the current time
 		function updateCurrentTime() {
 			const currentTimeElement = document.getElementById('currentTime');
