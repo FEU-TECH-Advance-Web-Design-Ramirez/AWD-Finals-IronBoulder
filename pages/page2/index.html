@@ -105,6 +105,32 @@
 <!-- Include the JavaScript file for the calendar functionality -->
 <script src="../page2/assets/js/scripts.js"></script>
 
+<!--- Symptom logger-->
+<div class ="Symptom-logger">
+    <div class = "lginfo">
+	<div class = "InputInfo">
+	<h1>Symptom Logger</h1>
+    <h2>Log a Symptom</h2>
+    <input type="text" id="symptomName" placeholder="Symptom Name">
+    <select id="severity">
+        <option value="">Select Severity</option>
+        <option value="Mild">Mild</option>
+        <option value="Moderate">Moderate</option>
+        <option value="Severe">Severe</option>
+    </select>
+
+  <div class="notes">  
+    <textarea id="notes" placeholder="Additional Notes (optional)"></textarea>
+</div>
+<button class = "btn" onclick="logSymptom()">Log Symptom</button>
+</div>
+
+    <h2>Logged Symptoms</h2>
+    <ul id="symptomsList"></ul>
+
+</div>
+</div>
+
    <!-------footer-->
    <footer>
 	<div class="footer-container">
