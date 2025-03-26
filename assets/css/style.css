@@ -1,0 +1,425 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    width: 100%;
+    height: 100%;
+    overflow-x: hidden;
+}
+
+/*content*/
+main{
+    font-family: Arial;
+    background-color: rgb(255, 255, 255);
+    text-align: center;
+}
+/* Section 1 */
+.section-1 {
+    font-family: arial;
+    background: #578FCA;
+    height: 100vh; 
+    position: relative; 
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-left: 5%;
+    padding: 22%;
+}
+
+/* Text content */
+.Sec1H1, .Sec1Text {
+    width: 70%;
+    text-align: left;
+    color: white;
+}
+
+.Sec1H1 {
+    font-size: 2rem;
+}
+.section-1 p{
+    font-size: 1.2rem;
+}
+/* Doctor Image */
+.DocWoman {
+    position: absolute;
+    right: 10%; 
+    bottom: 0; 
+    width: 45%; 
+}
+
+.DocWoman img {
+    width: 70%;
+    height: auto;
+}
+
+/* Get Started Button */
+.GetStarted {
+    margin-top: 40px;
+    text-align: left; 
+    padding-left: 20%;
+}
+
+.btn-get-started {
+    display: inline-block;
+    background-color: #A9C9F5; 
+    color: #fff;
+    font-size: 1.5rem;
+    border-radius: 20px; 
+    text-decoration: none;
+    transition: 0.3s ease-in-out;
+    height: 40px;
+    width: 180px;
+    text-align: center;
+    box-shadow: 3px 3px 4px rgba(0, 0, 0, 0.6);
+}
+
+.btn-get-started:hover {
+    background-color: #8AB5E3; 
+}
+
+
+/*Section 2*/
+.section-2{
+    font-family: arial;
+    background: #359BD1; 
+    width: auto;
+    text-align: center;
+    color: white;
+    height: 100vh;
+    padding-bottom: 25%;
+}
+.Sec2H2 {
+    width: 100%;
+    font-size: 2rem;
+    margin-bottom: 20px;
+    padding-top: 30px;
+}
+.section-2 hr{
+    margin-top: 50px;
+    width: 20%;
+    margin: auto;
+    border: 1px solid white;
+}
+.Sec2Text {
+    font-size: 1.2rem;
+    margin-top: 10px;
+    text-align: center;
+    padding-left: 13%;
+    padding-right: 13%;
+}
+/*Section 3*/
+/* Section 3: Our Services */
+.section-3, p{
+    padding-top: 10px;
+}
+
+.section-3 {
+    font-family: Arial, sans-serif;
+    background: #ffffff;
+    text-align: center;
+    padding: 60px 0;
+}
+.section-3 hr{
+    margin-top: 50px;
+    width: 13%;
+    margin: auto;
+    border: 1px solid #003e68;
+    margin-bottom: 50px;
+}
+.section-3 h1 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+}
+
+.services-container {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+}
+
+.service-box {
+    background: #93c6fa;
+    border-radius: 15px;
+    padding: 20px;
+    width: 250px;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out;
+    padding-bottom: 35px;
+}
+
+.service-box:hover {
+    transform: translateY(-5px);
+}
+
+.service-box img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+.service-icon img {
+    width: 30px;
+    height: 30px;
+}
+
+.service-box p {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #003e68;
+}
+
+/* header */
+header{
+    background: #3674B5;
+    color: rgb(255, 255, 255);
+    padding: 15px;
+    font-family: arial;
+
+}
+/* logo */
+header img{
+    height: 40px;
+    width: 180px;
+    margin: 0;
+    padding: 0;
+    float: left;
+}
+/*Navbar*/
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #3674B5;
+  }
+  
+  li {
+    float: right;
+  }
+  
+  li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+  }
+  
+  li a:hover {
+    background-color: #4da3ff;
+  }
+/* footer */
+footer{
+    font-size: small;
+    color: white;
+    background-color: #3674B5;
+    padding: 35px;
+    height: 50%;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: center;
+    gap: 100px;
+}
+
+.footer-box1 {
+    background: #3674B5;
+    padding: 20px;
+    width: 300px;
+    text-align: left;
+    padding-bottom: 35px;
+    font-size: 1.5rem;
+}
+
+.footer-box2 {
+    background: #3674B5;
+    padding: 20px;
+    width: 300px;
+    text-align: left;
+    padding-bottom: 35px;
+    font-family: arial;
+}
+
+.footer-box3 {
+    background: #3674B5;
+    padding: 20px;
+    width: 300px;
+    text-align: left;
+    padding-bottom: 35px;
+    font-family: arial;
+}
+
+.footer2{
+    font-size: 1rem;
+    text-align: center;
+    padding-top: 10px;
+    width: 60%;
+    margin: auto;
+    font-family: arial;
+}
+/* Responsive Media Queries */
+@media (max-width: 1920px) {
+    .section-1 {
+        height: 50vh; 
+        display: flex;
+        padding-left: 5%;
+    }
+    .section-1 img{
+        width: 80%;
+    }
+    .Sec1H1 {
+        font-size: 2.5rem;
+    }
+    .Sec1Text {
+        font-size: 1.2rem;
+    }
+    .section-2{
+        height: 20vh;
+        padding-bottom: 18%;
+    }
+    .section-2 hr{
+        margin-bottom: 25px;
+    }
+    .Sec2H2 {
+        font-size: 2.5rem;
+    }
+    .Sec2Text {
+        font-size: 1.2rem;
+    }
+    .btn-get-started {
+        font-size: 1.5rem;
+        padding: 10px 25px;
+        height: 100%;
+    }
+}
+    
+/* 1440px screens */
+@media (max-width: 1440px) {
+    .section-1 {
+        height: 50vh; 
+        display: flex;
+        padding-left: 5%;
+    }
+    .Sec1H1 {
+        font-size: 1.8rem;
+    }
+    .Sec1Text {
+        font-size: 1rem;
+    }
+    .section-2{
+        height: 25vh;
+        padding-bottom: 23%;
+    }
+    .btn-get-started {
+        font-size: 1rem;
+        padding: 8px 20px;
+    }
+    .DocWoman {
+        width: 40%;
+        right: 5%;
+    }
+}
+/* 1024px screens */
+@media (max-width: 1024px) {
+    .section-1 {
+        height: auto;
+        flex-direction: column;
+        text-align: center;
+        padding: 5%;
+    }
+    .section-2{
+        height: 30vh;
+        padding-bottom: 30%;
+    }
+    .Sec1H1, .Sec1Text {
+        width: 60%;
+        text-align: left;
+    }
+    .GetStarted {
+        padding-left: 100px;
+    }
+    .DocWoman {
+        float: right;
+    }
+    .services-container {
+        flex-wrap: wrap;
+        gap: 20px;}
+}
+
+
+/* 375px screens (Mobile) */
+@media (max-width: 375px) {
+    header {
+        text-align: left;
+        padding: 20px;
+    }
+    ul {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    li {
+        float: none;
+        width: 100%;
+    }
+    .section-1 {
+        padding: 50px;
+    }
+    .Sec1H1 {
+        font-size: 1.2rem;
+        text-align: center;
+        width: 100%;
+    }
+    .Sec1Text {
+        font-size: 0.5rem;
+        width: 100%;
+        text-align: center;
+    }
+    .section-1 img{
+        display: none;
+    }
+    .GetStarted{
+        text-align: center;
+        padding-left: 0;
+
+    }
+    .section-2{
+        height: 60vh;
+    }
+    .Sec2H2 {
+        width: 100%;
+        font-size: 1rem;
+        padding-top: 25px;
+    }
+    
+    .Sec2Text {
+        font-size: 1rem;
+        margin-top: 10px;
+        width: 100%;
+        padding-left: 20%;
+        padding-right: 20%;
+    }   
+    .btn-get-started {
+        font-size: 0.9rem;
+        padding: 6px 15px;
+    }
+    .DocWoman {
+        width: 80%;
+    }
+    .services-container {
+        flex-direction: column;
+        align-items: center;
+    }
+    .service-box {
+        width: 60%;
+    }
+    .footer-container {
+        flex-direction: column;
+        text-align: center;
+        gap: 20px;
+    }
+}
