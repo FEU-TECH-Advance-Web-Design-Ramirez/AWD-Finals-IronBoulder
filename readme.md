@@ -5,7 +5,6 @@
 <br />
 <div align="center">
   <a href="https://github.com/zyx-0314/">
-  <!-- TODO: If you want to add logo or banner you can add it here -->
     <img src="./assets/img/medisync_logo.png" alt="MediSync" height="400">
   </a>
   <h3 align="center">MediSync</h3>
@@ -16,8 +15,7 @@
 
 <br />
 
-<!-- TODO: Change the zyx-0314 into your github username  -->
-<!-- TODO: Change the WD-Template-Project into the same name of your folder -->
+
 ![](https://visit-counter.vercel.app/counter.png?page=J4ngUk/AWD-FINALS-IRONBOULDER)
 
 [![wakatime](https://wakatime.com/badge/user/018dd99a-4985-4f98-8216-6ca6fe2ce0f8/project/63501637-9a31-42f0-960d-4d0ab47977f8.svg)](https://wakatime.com/@250a5704-6911-4fe9-a84b-d3e786a5bff9/projects/aibqqigygc?start=2025-03-20&end=2025-03-26)
@@ -27,7 +25,7 @@
 <br />
 <br />
 
-<!-- TODO: If you want to add more layers for your readme -->
+
 <details>
   <summary>Table of Contents</summary>
   <ol>
