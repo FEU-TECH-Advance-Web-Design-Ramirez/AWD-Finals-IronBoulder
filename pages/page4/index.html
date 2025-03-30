@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MediSync</title>
-    <link rel="stylesheet" href="../page2/assets/css/style.css">
-    <script src="../page2/assets/js/script.js"></script>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <script src="../page4/assets/js/scripts.js"></script>
 </head>
 <body>
     <!-----header-->
@@ -20,30 +20,38 @@
             <li><a href="../../index.html">Home</a></li>
         </ul>
     </header>
-    <!-----Content-->  
-    <div class ="Symptom-logger">
-        <div class = "lginfo">
-        <div class = "InputInfo">
-        <h1>Symptom Logger</h1>
-        <h2>Log a Symptom</h2>
-        <input type="text" id="symptomName" placeholder="Symptom Name">
-        <select id="severity">
-            <option value="">Select Severity</option>
-            <option value="Mild">Mild</option>
-            <option value="Moderate">Moderate</option>
-            <option value="Severe">Severe</option>
-        </select>
+    <!-----Content-->
+    <div class="Medication-reminder">
+        <script src="../page4/assets/js/scripts.js"></script>
+        <div class="container">
+            <div class="header">
+                <h1>Mediction Reminder</h1>
     
-      <div class="notes">  
-        <textarea id="notes" placeholder="Additional Notes (optional)"></textarea>
-    </div>
-    <button class = "btn" onclick="logSymptom()">Log Symptom</button>
-    </div>
+                <div class="time" id="currentTime">
+                    <!-- Time will be displayed here -->
+                </div>
+            </div>
     
-        <h2>Logged Symptoms</h2>
-        <ul id="symptomsList"></ul>
+            <div class="reminder-input-container">
+                <div class="medicine-name">
+                    <label for="medicineName">Medicine Name:</label>
+                    <input type="text" id="medicineName" placeholder="Enter medicine name">
+                </div>
     
-    </div>
+                <div class="time-reminder">
+                    <label for="reminderTime">Reminder Time:</label>
+                    <input type="time" id="reminderTime">
+                </div>
+    
+                <button class="add-reminder-btn" onclick="addReminder()">Add Reminder</button>
+            </div>
+    
+            <div class="reminder-container">
+                <ul class="reminder-list" id="reminders">
+                    <!-- Reminders will be added here -->
+                </ul>
+            </div>
+        </div>
     </div>
     <!-------footer-->
     <footer>

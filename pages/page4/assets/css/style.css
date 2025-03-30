@@ -11,130 +11,141 @@ body {
 }
 
 /*content*/
-.Symptom-logger {
-    font-family: Arial, sans-serif;
-    color: whitesmoke;
-    margin: 20px;
-    padding: 50px;
+main{
+    background-color: rgb(255, 255, 255);
     text-align: center;
-    background-color:#578FCA;
-    width: 77%;
-    margin: 0 auto;   
-    height: auto;
-    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
 }
-
-.InputInfo{
-    padding: 20px;
-    text-align: center;
-    background-color: #3674B5;
-    width: 70%;
-    margin-top: px;
-    border: 1px solid black;
+.Medication-reminder {
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 1300px;
     margin: 0 auto;
+    margin-top: 20px;
+}
+.container {
+    background-color: #578FCA;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    height: 650px;
+    max-width: 1200px; 
+    height: auto;
+    padding: 50px;
+    width: 1400px;
 }
 
+.header {
+    flex-direction: column;
+    align-items: center ;
+    background-color: #3674B5;
+    padding: 100px;
+    width: 900px;
+    font-family: arial;
+    margin: auto;
+    border: 1px solid black;
+    text-align: center;
+}
 
-.Sympotom-logger h1, h2, h3 {
+.header > h1 {
+    font-size: 40px;
+    text-align: center;
     color: whitesmoke;
 }
 
+.time {
+    font-size: 24px;
+    margin-top: 20px;
+    color: whitesmoke;
+}
 
-/* Form styles */
-.Symptom-logger input, select 
-{
-    width: 90%;
-    max-width: 400px;
-    padding: 10px;
-    margin: 10px 0;
-    border: 1px solid black;
+.reminder-input-container {
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+}
+
+.reminder-input-container div {
+    display: flex;
+    justify-content: center;
+    align-items: center ;
+    font-family: arial;
+}
+
+.reminder-input-container label {
+    font-size: 18px;
+    width: 300px;
+    color: #333;
+    margin-bottom: 5px;
+}
+
+.reminder-input-container input {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 15px;
     border-radius: 5px;
-    font-size: 1em;;
+    border: 1px solid #ccc;
+    font-family: arial;
 }
-.Symptom-logger textarea{
-    padding: 10px;
-    width: 47%;
-    margin: 10px 0;
-    border: 1px solid black;
-    border-radius: 5px;
-    font-size: 1em;;
-}
-.notes {
-    height: 80px;
-    padding-top: 20px;
-    margin-top: 10px;
-}
-/* Buttons */
-.btn {
-    background-color: #3498db;
+
+.add-reminder-btn {
+    background-color: #4caf50;
     color: white;
     border: none;
-    padding: 10px 15px;
-    font-size: 1em;
-    cursor: pointer;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
     border-radius: 5px;
-    margin: 10px;
-    transition: 0.3s;
+    cursor: pointer;
 }
 
-.btn:hover {
-    background-color: #2980b9;
+.time {
+    display: flex;
+    flex-direction: column;
+    font-size: 35px;
+    font-weight: bold;
+    color: whitesmoke;
+    margin-bottom: 20px;
 }
 
-/* Symptom list */
-#symptomsList {
+.reminder-container {
+    padding: 20px;
+    max-width: 600px;
+}
+
+.reminder-list {
     list-style: none;
     padding: 0;
-    margin-top: 20px;
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    grid-gap: 5px;
-    width: 70%;
-    text-align: center;
-    margin: 0 auto;
+    max-width: 600px;
 }
-
-.symptom-item {
-    background-color: white;
-    border: 1px solid #ddd;
-    padding: 20px;
-    margin: 10px auto;
-    max-width: 300px;
-    height: 150px;
-    border-radius: 10px;
-    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
-    text-align: center;
-    line-height: 1.6;
-    color: rgb(0, 44, 73);
+.reminder-text{
+    font-size: 20px;
+    color: #333;
 }
-
-.symptom-item strong {
-    color: #2c3e50;
-    font-size: 1.1em;
-}
-
-.symptom-item small {
-    color: #888;
-}
-
-/* Delete button */
-.delete-button{
-    background-color: #e74c3c;
-    padding: 8px 12px;
-    font-size: 0.9em;
-    color: white;
-    border: none;
-    padding: 10px 15px;
-    font-size: 1em;
-    cursor: pointer;
+.reminder-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #fff;
+    padding: 10px;
+    margin-bottom: 10px;
     border-radius: 5px;
-    margin: 10px;
-    transition: 0.3s;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    max-width: 1000px;
+    width: 140%;
+    margin-left: 150px;   
 }
 
-.delete-button:hover {
-    background-color: #c0392b;
+.delete-btn {
+    background-color: #ff5252;
+    color: #fff;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 3px;
+    cursor: pointer;
 }
+
+
 /* header */
 header{
     background: #3674B5;
