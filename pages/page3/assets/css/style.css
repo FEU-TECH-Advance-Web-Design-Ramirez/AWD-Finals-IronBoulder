@@ -116,12 +116,15 @@ main{
 	margin: 20px 0;
 	border: 1px solid #ccc;
     border: 1px solid BLACK;
+    display: flex;
 }
 #left{
     margin-left: 20px;
+    margin-right: 20px;
     padding: 10px 0;
     text-align: center;
     color: whitesmoke;
+    
 }
 #right{
     margin-right: 20px;
@@ -133,10 +136,12 @@ main{
 	font-size: 18px;
 	margin: 0;
 }
-
+#previous, #next{
+    margin-top: 10px;
+}
 #reminderList {
 	list-style: none;
-	padding: 0;
+	padding: 20px;
 }
 
 #reminderList li {
