@@ -1,0 +1,192 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+}
+/*navbar*/
+.navdiv header{
+    background: #3674B5;
+    color: rgb(255, 255, 255);
+    padding: 15px;
+    font-family: arial;
+}
+/* logo */
+.navdiv header img{
+    height: 40px;
+    width: 180px;
+    margin: 0;
+    padding: 0;
+    float: left;
+}
+/*Navbar*/
+.navdiv ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #3674B5;
+  }
+  
+  .navdiv li {
+    float: right;
+  }
+  
+  .navdiv li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+  }
+  
+  .navdiv li a:hover {
+    background-color: #4da3ff;
+  }
+  .navdiv .dropdown {
+    float: left;
+    overflow: hidden;
+  }
+  
+  .navdiv .dropdown .dropbtn {
+    font-size: 16px;  
+    border: none;
+    outline: none;
+    color: white;
+    padding: 14px 16px;
+    background-color: inherit;
+    font-family: inherit;
+    margin: 0;
+  }
+  
+  .navdiv .navbar a:hover, .dropdown:hover .dropbtn {
+    background-color: #4da3ff;
+  }
+  .navdiv .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+  }
+  
+  .navdiv .dropdown-content a {
+    float: none;
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+  }
+  
+  .navdiv .dropdown-content a:hover {
+    background-color: #ddd;
+  }
+  
+  .navdiv .dropdown:hover .dropdown-content {
+    display: block;
+  }
+/*signup*/
+.signup-container {
+    background-color: #f4f4f4;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.signup-container  {
+    background: white;
+    padding: 20px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    width: 350px;
+    text-align: center;
+}
+
+.signup-container h2 {
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.signup-container input {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.signup-container button {
+    width: 100%;
+    padding: 10px;
+    background: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.signup-container button:hover {
+    background: #45a049;
+}
+
+.signup-container .success-message {
+    margin-top: 15px;
+    color: green;
+    font-size: 14px;
+}
+
+/*footer*/
+footer{
+    font-size: small;
+    color: white;
+    background-color: #3674B5;
+    padding: 35px;
+    height: 50%;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: center;
+    gap: 100px;
+}
+
+.footer-box1 {
+    background: #3674B5;
+    padding: 20px;
+    width: 300px;
+    text-align: left;
+    padding-bottom: 35px;
+    font-size: 1.5rem;
+}
+
+.footer-box2 {
+    background: #3674B5;
+    padding: 20px;
+    width: 300px;
+    text-align: left;
+    padding-bottom: 35px;
+    font-family: arial;
+    line-height: 1.5;
+}
+
+.footer-box3 {
+    background: #3674B5;
+    padding: 20px;
+    width: 300px;
+    text-align: left;
+    padding-bottom: 35px;
+    font-family: arial;
+    line-height: 1.5;
+}
+
+.footer2{
+    font-size: 1rem;
+    text-align: center;
+    padding-top: 10px;
+    width: 60%;
+    margin: auto;
+    font-family: arial;
+}
