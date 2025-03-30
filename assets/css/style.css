@@ -322,7 +322,8 @@ footer{
         font-size: 1.2rem;
     }
     .section-2{
-        height: 25vh;
+        height: 20vh;
+        padding-bottom: 18%;
     }
     .section-2 hr{
         margin-bottom: 25px;
@@ -355,6 +356,7 @@ footer{
     }
     .section-2{
         height: 25vh;
+        padding-bottom: 23%;
     }
     .btn-get-started {
         font-size: 1rem;
@@ -372,6 +374,10 @@ footer{
         flex-direction: column;
         text-align: center;
         padding: 5%;
+    }
+    .section-2{
+        height: 30vh;
+        padding-bottom: 30%;
     }
     .Sec1H1, .Sec1Text {
         width: 60%;
@@ -426,7 +432,7 @@ footer{
 
     }
     .section-2{
-        height: 30vh;
+        height: 60vh;
     }
     .Sec2H2 {
         width: 100%;
