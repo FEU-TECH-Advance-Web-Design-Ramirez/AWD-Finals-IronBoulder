@@ -1,44 +1,16 @@
-/*navbar*/
-.Navdiv header{
-    background: #3674B5;
-    color: rgb(255, 255, 255);
-    padding: 15px;
-    font-family: arial;
-    margin-bottom: 50px;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
+body {
+    width: 100%;
+    height: 100%;
+    overflow-x: hidden;
 }
-/* logo */
-.Navdiv img{
-    height: 40px;
-    width: 180px;
-    margin: 0;
-    padding: 0;
-    float: left;
-}
-.Navdiv ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
-    background-color: #3674B5;
-}
-  .Navdiv li {
-    float: right;
-  }
-  .Navdiv  li a {
-    display: block;
-    color: white;
-    text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
-  }
-  .Navdiv  li a:hover {
-    background-color: #4da3ff;
-  }
-.bg{
-    background-color: #9EC3EA;
-}
-/*Log a symptom*/
+
+/*content*/
 .Symptom-logger {
     font-family: Arial, sans-serif;
     color: whitesmoke;
@@ -50,6 +22,8 @@
     margin: 0 auto;   
     height: auto;
     box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
+    margin-top: 10px;
+    margin-bottom: 10px;
 }
 
 .InputInfo{
@@ -87,6 +61,10 @@
     border-radius: 5px;
     font-size: 1em;;
 }
+h2{
+    font-size: 1.5em;
+    margin-top: 40px;
+}
 .notes {
     height: 80px;
     padding-top: 20px;
@@ -112,14 +90,16 @@
 /* Symptom list */
 #symptomsList {
     list-style: none;
-    padding: 0;
-    margin-top: 20px;
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    grid-gap: 5px;
-    width: 70%;
+    padding: 100px;
+    width: 100%;
     text-align: center;
     margin: 0 auto;
+    background: #578FCA;
+    display: flex; 
+    flex-wrap: wrap; 
+    justify-content: center;
+    gap: 5px; 
+    padding: 50px;
 }
 
 .symptom-item {
@@ -127,18 +107,20 @@
     border: 1px solid #ddd;
     padding: 20px;
     margin: 10px auto;
-    max-width: 300px;
-    height: 150px;
+    max-width: auto;
     border-radius: 10px;
     box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
     text-align: center;
     line-height: 1.6;
     color: rgb(0, 44, 73);
+    height: auto;
 }
 
 .symptom-item strong {
     color: #2c3e50;
     font-size: 1.1em;
+    width: 100%;
+    display: block;
 }
 
 .symptom-item small {
@@ -163,387 +145,91 @@
 .delete-button:hover {
     background-color: #c0392b;
 }
-
-/*Medication Reminder*/
-
-.Medication-reminder {
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    width: 1300px;
-    margin: 0 auto;
-    margin-top: 20px;
-}
-.container {
-    background-color: #578FCA;
-    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-    height: 650px;
-    max-width: 1200px; 
-    height: auto;
-    padding: 50px;
-    width: 1400px;
-}
-
-.header {
-    flex-direction: column;
-    align-items: center ;
-    background-color: #3674B5;
-    padding: 100px;
-    width: 900px;
-    font-family: arial;
-    margin: auto;
-    border: 1px solid black;
-    text-align: center;
-}
-
-.header > h1 {
-    font-size: 40px;
-    text-align: center;
-    color: whitesmoke;
-}
-
-.time {
-    font-size: 24px;
-    margin-top: 20px;
-    color: whitesmoke;
-}
-
-.reminder-input-container {
-    padding: 30px;
-    display: flex;
-    flex-direction: column;
-}
-
-.reminder-input-container div {
-    display: flex;
-    justify-content: center;
-    align-items: center ;
+/* header */
+header{
+    background: #3674B5;
+    color: rgb(255, 255, 255);
+    padding: 15px;
     font-family: arial;
 }
-
-.reminder-input-container label {
-    font-size: 18px;
-    width: 300px;
-    color: #333;
-    margin-bottom: 5px;
-}
-
-.reminder-input-container input {
-    width: 100%;
-    padding: 8px;
-    margin-bottom: 15px;
-    border-radius: 5px;
-    border: 1px solid #ccc;
-    font-family: arial;
-}
-
-.add-reminder-btn {
-    background-color: #4caf50;
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-    border-radius: 5px;
-    cursor: pointer;
-}
-
-.time {
-    display: flex;
-    flex-direction: column;
-    font-size: 35px;
-    font-weight: bold;
-    color: whitesmoke;
-    margin-bottom: 20px;
-}
-
-.reminder-container {
-    padding: 20px;
-    max-width: 600px;
-}
-
-.reminder-list {
-    list-style: none;
+/* logo */
+header img{
+    height: 40px;
+    width: 180px;
+    margin: 0;
     padding: 0;
-    max-width: 600px;
+    float: left;
 }
-.reminder-text{
-    font-size: 20px;
-    color: #333;
-}
-.reminder-item {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: #fff;
-    padding: 10px;
-    margin-bottom: 10px;
-    border-radius: 5px;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-    max-width: 1000px;
-    width: 140%;
-    margin-left: 150px;   
-}
-
-.delete-btn {
-    background-color: #ff5252;
-    color: #fff;
+/*Navbar*/
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #3674B5;
+  }
+  
+  li {
+    float: right;
+  }
+  
+  li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+  }
+  
+  li a:hover {
+    background-color: #4da3ff;
+  }
+  .dropdown {
+    float: left;
+    overflow: hidden;
+  }
+  
+  .dropdown .dropbtn {
+    font-size: 16px;  
     border: none;
-    padding: 5px 10px;
-    border-radius: 3px;
-    cursor: pointer;
-}
-
-/*Appointment Tracker*/
-
-.Appointment-tracker {
-	max-width: 1300px;
-	margin: 15px auto;
-    font-family: arial;
-    box-shadow: 2px 2px 10px rgba(0, 0, 0, .1);
-}
-
-/* Calendar container */
-.container-calendar {
-	background: #578FCA;
-	padding: 15px;
-	max-width: 1300px;
-	margin: 0 auto;
-	overflow: auto;
-	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-	display: flex;
-	justify-content: space-between;
-}
-
-/* Event section styling */
-#event-section {
-	padding: 10px;
-	background: #3674B5;
-	margin: 20px 0;
-	border: 1px solid BLACK;
-    
-}
-
-.container-calendar #left h1 {
-	color: whitesmoke;
-	text-align: center;
-	background-color: #3674B5;
-    border: 1px solid BLACK;
-	margin: 0;
-	padding: 10px 0;
-}
-
-#event-section h3 {
-	color: whitesmoke;
-	font-size: 18px;
-	margin: 0;
-}
-
-#event-section input[type="date"],
-#event-section input[type="text"] {
-	margin: 10px 0;
-	padding: 5px;
-	width: 80%;
-}
-
-#event-section button {
-	background: #5ca2ec;
-	color: white;
-	border: none;
-	padding: 8px 15px;
-	cursor: pointer;
-}
-
-.event-marker {
-	position: relative;
-}
-
-.event-marker::after {
-	content: '';
-	display: block;
-	width: 6px;
-	height: 6px;
-	background-color: red;
-	border-radius: 50%;
-	position: absolute;
-	bottom: 0;
-	left: 0;
-}
-
-/* event tooltip styling */
-.event-tooltip {
-	position: absolute;
-	background-color: rgba(234, 232, 232, 0.763);
-	color: black;
-	padding: 10px;
-	border-radius: 4px;
-	bottom: 20px;
-	left: 50%;
-	transform: translateX(-50%);
-	display: none;
-	transition: all 0.3s;
-	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-	z-index: 1;
-}
-
-.event-marker:hover .event-tooltip {
-	display: block;
-}
-
-/* Reminder section styling */
-#reminder-section {
-	padding: 10px;
-	background: #3674B5;
-	margin: 20px 0;
-	border: 1px solid #ccc;
-    border: 1px solid BLACK;
-}
-#left{
-    margin-left: 20px;
-    padding: 10px 0;
-    text-align: center;
-    color: whitesmoke;
-}
-#right{
-    margin-right: 20px;
-    padding: 10px 0;
-    text-align: center;
-}
-#reminder-section h3 {
-	color: whitesmoke;
-	font-size: 18px;
-	margin: 0;
-}
-
-#reminderList {
-	list-style: none;
-	padding: 0;
-}
-
-#reminderList li {
-	margin: 5px 0;
-	font-size: 16px;
-}
-
-/* Style for the delete buttons */
-.delete-event {
-	background: rgb(237, 19, 19);
-	color: white;
-	border: none;
-	padding: 5px 10px;
-	cursor: pointer;
-	margin-left: 10px;
-	align-items: right;
-}
-#monthAndYear {
-    text-align: center;
-    margin-top: 0;
-    color: whitesmoke;
-    padding: 17px;
-	background: #3674B5;
-	margin-top: 20px;
-	border: 1px solid #ccc;
-    border: 1px solid BLACK;
-}
-
-/* Buttons in the calendar */
-.button-container-calendar button {
-	cursor: pointer;
-	background:  #3674B5;
-	color: #fff;
-	border: 1px solid  #3674B5;
-	border-radius: 4px;
-	padding: 5px 10px;
-}
-
-/* Calendar table */
-.table-calendar {
-	border-collapse: collapse;
-	width: 100%;
-}
-
-.table-calendar td,
-.table-calendar th {
-	padding: 30px;
-	border: 2px solid #e2e2e2;
-	text-align: center;
-	vertical-align: top;
-}
-
-/* Date picker */
-.date-picker.selected {
-	background-color: #f2f2f2;
-	font-weight: bold;
-	outline: 1px dashed #002d33;
-}
-
-.date-picker.selected span {
-	border-bottom: 2px solid currentColor;
-}
-
-/* Day-specific styling */
-.date-picker:nth-child(1) {
-	color: rgb(0, 44, 73);
-	/* Sunday */
-}
-
-.date-picker:nth-child(7) {
-	color: rgb(0, 44, 73);
-	/* Friday */
-}
-
-/* Hover effect for date cells */
-.date-picker:hover {
-	background-color: #3674B5;;
-	color: white;
-	cursor: pointer;
-}
-
-/* Header for month and year */
-#monthAndYear {
-	text-align: center;
-	margin-top: 0;
-}
-
-/* Navigation buttons */
-.button-container-calendar {
-	position: relative;
-	margin-bottom: 1em;
-	overflow: hidden;
-	clear: both;
-}
-
-#previous {
-	float: left;
-}
-
-#next {
-	float: right;
-}
-
-/* Footer styling */
-.footer-container-calendar {
-	margin-top: 20px;
-	border-top: 1px solid black;
-	padding: 10px 10px;
-}
-
-.footer-container-calendar select {
-	cursor: pointer;
-	background: #ffffff;
-	color: #585858;
-	border: 1px solid black;
-	border-radius: 3px;
-	padding: 5px 1em;
-}
-#year{
-    margin-left:70px;
-}
-/*footer*/
+    outline: none;
+    color: white;
+    padding: 14px 16px;
+    background-color: inherit;
+    font-family: inherit;
+    margin: 0;
+  }
+  
+  .navbar a:hover, .dropdown:hover .dropbtn {
+    background-color: #4da3ff;
+  }
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+  }
+  
+  .dropdown-content a {
+    float: none;
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+  }
+  
+  .dropdown-content a:hover {
+    background-color: #ddd;
+  }
+  
+  .dropdown:hover .dropdown-content {
+    display: block;
+  }
+/* footer */
 footer{
-    margin-top:400px;
     font-size: small;
     color: white;
     background-color: #3674B5;
@@ -573,6 +259,7 @@ footer{
     text-align: left;
     padding-bottom: 35px;
     font-family: arial;
+    line-height: 1.5;
 }
 
 .footer-box3 {
@@ -582,6 +269,7 @@ footer{
     text-align: left;
     padding-bottom: 35px;
     font-family: arial;
+    line-height: 1.5;
 }
 
 .footer2{
@@ -591,4 +279,92 @@ footer{
     width: 60%;
     margin: auto;
     font-family: arial;
+}
+
+/* Responsive Media Queries */
+
+/* 1920x1080 (Default large screens) */
+@media screen and (max-width: 1920px) {
+    .overlay {
+        width: 60%;
+    }
+    .overlay h1 {
+        font-size: 2.8rem;
+    }
+    .overlay p {
+        font-size: 1.3rem;
+    }
+    .team-member {
+        width: 200px;
+    }
+}
+
+/* 1440x1000 */
+@media screen and (max-width: 1440px) {
+    .overlay {
+        width: 65%;
+    }
+    .overlay h1 {
+        font-size: 2.5rem;
+    }
+    .overlay p {
+        font-size: 1.2rem;
+    }
+    .team-member {
+        width: 180px;
+    }
+}
+
+/* 1024x768 */
+@media screen and (max-width: 1024px) {
+    .overlay {
+        width: 75%;
+        padding: 40px;
+    }
+    .overlay h1 {
+        font-size: 2rem;
+    }
+    .overlay p {
+        font-size: 1.1rem;
+    }
+    .team-container {
+        flex-wrap: wrap;
+    }
+    .team-member {
+        width: 160px;
+    }
+}
+
+/* 375x667 (Mobile screens) */
+@media screen and (max-width: 375px) {
+    .overlay {
+        width: 90%;
+        padding: 30px;
+    }
+    .overlay h1 {
+        font-size: 1.8rem;
+    }
+    .overlay p {
+        font-size: 1rem;
+    }
+    .team-container {
+        flex-direction: column;
+        align-items: center;
+    }
+    .team-member {
+        width: 80%;
+    }
+    ul {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+    }
+    li {
+        float: none;
+    }
+    .footer-container {
+        flex-direction: column;
+        text-align: center;
+        gap: 20px;
+    }
 }

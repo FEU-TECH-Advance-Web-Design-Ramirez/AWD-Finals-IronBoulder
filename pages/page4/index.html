@@ -5,9 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MediSync</title>
     <link rel="stylesheet" href="assets/css/style.css">
+    <script src="../page4/assets/js/script.js"></script>
 </head>
 <body>
     <!-----header-->
+   <div class ="navdiv">
     <header>
         <!---Logo-->
             <img src="../page1/assets/img/new medisync logo.png" alt="MediSync Logo">
@@ -27,61 +29,40 @@
             <li><a href="../../index.html">Home</a></li>
         </ul>
     </header>
+</div>
     <!-----Content-->
-    <main>
-   <!-- section-1 -->
-    <!-- Section 1: About Us -->
-<div class="section-1">
-    <div class="overlay">
-        <h1>About Us</h1>
-        <p>
-            At MediSync, we believe that managing your health should be simple, 
-            stress-free, and accessible. Our app empowers users with tools to 
-            stay on top of their well-being—whether it’s logging symptoms, 
-            setting medication reminders, or tracking medical appointments.
-        </p>
-    </div>
-</div>
-
-<!-- Section 2: Our Team -->
-<div class="section-2">
-    <h1>Our Team</h1>
-    <div class="team-container">
-        <!-- Space for team members -->
-        <div class="team-member">
-            <img src="./assets/img/TDY PIC.jpg" alt="Terrence Phillip Dy">
-            <p>Terrence Phillip Dy</p>
-            Programmer
-        </div>
-
-        <div class="team-member">
-            <img src="./assets/img/JOSH PIC.jpg" alt="Joshua Gabriel Ureta">
-            <p>Joshua Gabriel Ureta</p>
-            Designer
-        </div>
-
-        <div class="team-member">
-            <img src="./assets/img/MARIUS PIC.jpg" alt="Marius Alistar del Poso">
-            <p>Marius Alistar del Poso</p>
-            Designer
-        </div>
-
-        <div class="team-member">
-            <img src="./assets/img/BARON PIC.jpg" alt="Red-Baron de Jesus">
-            <p>Red-Baron de Jesus</p>
-            Documentator
-        </div>
-
-        <div class="team-member">
-            <img src="./assets/img/LATRELL PIC.jpg" alt="Latrell Gimeo Militsala">
-            <p>Latrell Gimeo Militsala</p>
-            Documentator
+    <div class="Medication-reminder">
+        <script src="../page4/assets/js/scripts.js"></script>
+        <div class="container">
+            <div class="header">
+                <h1>Mediction Reminder</h1>
+    
+                <div class="time" id="currentTime">
+                    <!-- Time will be displayed here -->
+                </div>
+            </div>
+    
+            <div class="reminder-input-container">
+                <div class="medicine-name">
+                    <label for="medicineName">Medicine Name:</label>
+                    <input type="text" id="medicineName" placeholder="Enter medicine name">
+                </div>
+    
+                <div class="time-reminder">
+                    <label for="reminderTime">Reminder Time:</label>
+                    <input type="time" id="reminderTime">
+                </div>
+    
+                <button class="add-reminder-btn" onclick="addReminder()">Add Reminder</button>
+            </div>
+    
+            <div class="reminder-container">
+                <ul class="reminder-list" id="reminders">
+                    <!-- Reminders will be added here -->
+                </ul>
+            </div>
         </div>
     </div>
-</div>
-
-
-     <!--section-2 -->     
     <!-------footer-->
     <footer>
         <div class="footer-container">
