@@ -1,22 +1,18 @@
-document.getElementById('signupForm').addEventListener('submit', function(event) {
-    event.preventDefault(); // Prevent form from refreshing page
-    
-    const username = document.getElementById('username').value;
-    const email = document.getElementById('email').value;
-    const password = document.getElementById('password').value;
-    
-    if (!username || !email || !password) {
-        alert('Please fill in all fields.');
-        return;
-    }
-    
-    const userData = {
-        username: username,
-        email: email,
-        password: password // In real apps, never store passwords in plain text!
-    };
-    
-    localStorage.setItem('user', JSON.stringify(userData));
-    alert('Sign-up successful!');
-    document.getElementById('signupForm').reset();
-});
+let signupBtn = document.getElementById("signupBtn");
+let signinBtn = document.getElementById("signinBtn");
+let nameField = document.getElementById("nameField");
+let title = document.getElementById("title");
+
+signinBtn.onclick = function(){
+    nameField.style.maxHeight = "0";
+    title.innerHTML = "Sign In";
+    signupBtn.classList.add("disable");
+    signinBtn.classList.remove("disable");
+}
+
+signupBtn.onclick = function(){
+    nameField.style.maxHeight = "60px";
+    title.innerHTML = "Sign Up";
+    signupBtn.classList.remove("disable");
+    signinBtn.classList.add("disable");
+}

@@ -15,28 +15,28 @@
     </div>
           <!----Navbar-->
         <ul>
-            <li><a href="default.asp">Sign up</a></li>
+            <li><a href="../page5/index.html">Sign up</a></li>
             <li><div class="dropdown">
                 <button class="dropbtn">Care Services
                   <i class="fa fa-caret-down"></i>
                 </button>
                 <div class="dropdown-content">
-                  <a href="./pages/page2/index.html">Symptom Logger</a>
-                  <a href="./pages/page3/index.html">Appointment Tracker</a>
-                  <a href="./pages/page4/index.html">Medication Reminder</a>
+                  <a href="../page2/index.html">Symptom Logger</a>
+                  <a href="../page3/index.html">Appointment Tracker</a>
+                  <a href="../page4/index.html">Medication Reminder</a>
                 </div></li>
-            <li><a href="./pages/page1/index.html">About us</a></li>
-            <li><a href="./index.html">Home</a></li>
+            <li><a href="../page1/index.html">About us</a></li>
+            <li><a href="/index.html">Home</a></li>
         </ul>
     </header>
 
     <main>
         <div class="SignInContainer">
             <div class="form-box">
-                <h1>Sign Up</h1>
+                <h1 id="title">Sign Up</h1>
                 <form>
                     <div class="input-group">
-                        <div class="input-field">
+                        <div class="input-field" id="nameField">
                             <input type="text" placeholder="Name">
                         </div>
                     </div>
@@ -51,6 +51,11 @@
                         <div class="input-field">
                             <input type="password" placeholder="Password">
                         </div>
+                        <p>Lost password? <a href="#">Click Here!</a></p>
+                    </div>
+                    <div class="btn-field">
+                        <button type="button" id="signupBtn">Sign up</button>
+                        <button type="button" id="signinBtn" class="disable">Sign in</button>
                     </div>
                 </form>
             </div>
@@ -84,5 +89,8 @@
             </p>
         </div>
     </footer>
+
+    <script src="../page5/assets/js/scripts.js"></script>
+
 </body>
 </html>
