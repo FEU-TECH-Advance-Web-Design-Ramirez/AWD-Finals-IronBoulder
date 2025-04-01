@@ -127,7 +127,7 @@ ul {
 .form-box h1{
     font-size: 30px;
     margin-bottom: 60px;
-    color: darkmagenta;
+    color: rgb(0, 2, 97);
     position: relative;
 }
 
@@ -136,7 +136,7 @@ ul {
     width: 30px;
     height: 4px;
     border-radius: 3px;
-    background: darkmagenta;
+    background: rgb(0, 11, 109);
     position: absolute;
     bottom: -12px;
     left: 50%;
@@ -170,7 +170,7 @@ form p{
 
 form p a{
      text-decoration: none;
-     color: darkmagenta;
+     color: rgb(0, 12, 78);
 }
 
 .btn-field{
@@ -182,7 +182,7 @@ form p a{
 
 .btn-field button{
     flex-basis: 48%;
-    background: darkmagenta;
+    background: rgb(0, 12, 78);
     color: #fff;
     height: 40px;
     border-radius: 20px;
