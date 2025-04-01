@@ -2,17 +2,30 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-
 }
-/*navbar*/
-.navdiv header{
+
+body {
+    width: 100%;
+    height: 100%;
+    overflow-x: hidden;
+}
+
+/*content*/
+main{
+    background-color: rgb(255, 255, 255);
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* header */
+header{
     background: #3674B5;
     color: rgb(255, 255, 255);
     padding: 15px;
     font-family: arial;
 }
 /* logo */
-.navdiv header img{
+header img{
     height: 40px;
     width: 180px;
     margin: 0;
@@ -20,7 +33,7 @@
     float: left;
 }
 /*Navbar*/
-.navdiv ul {
+ul {
     list-style-type: none;
     margin: 0;
     padding: 0;
@@ -28,11 +41,11 @@
     background-color: #3674B5;
   }
   
-  .navdiv li {
+  li {
     float: right;
   }
   
-  .navdiv li a {
+  li a {
     display: block;
     color: white;
     text-align: center;
@@ -40,15 +53,15 @@
     text-decoration: none;
   }
   
-  .navdiv li a:hover {
+  li a:hover {
     background-color: #4da3ff;
   }
-  .navdiv .dropdown {
+  .dropdown {
     float: left;
     overflow: hidden;
   }
   
-  .navdiv .dropdown .dropbtn {
+  .dropdown .dropbtn {
     font-size: 16px;  
     border: none;
     outline: none;
@@ -59,10 +72,10 @@
     margin: 0;
   }
   
-  .navdiv .navbar a:hover, .dropdown:hover .dropbtn {
+  .navbar a:hover, .dropdown:hover .dropbtn {
     background-color: #4da3ff;
   }
-  .navdiv .dropdown-content {
+  .dropdown-content {
     display: none;
     position: absolute;
     background-color: #f9f9f9;
@@ -71,7 +84,7 @@
     z-index: 1;
   }
   
-  .navdiv .dropdown-content a {
+  .dropdown-content a {
     float: none;
     color: black;
     padding: 12px 16px;
@@ -80,65 +93,43 @@
     text-align: left;
   }
   
-  .navdiv .dropdown-content a:hover {
+  .dropdown-content a:hover {
     background-color: #ddd;
   }
   
-  .navdiv .dropdown:hover .dropdown-content {
+  .dropdown:hover .dropdown-content {
     display: block;
   }
-/*signup*/
-.signup-container {
-    background-color: #f4f4f4;
-    justify-content: center;
-    align-items: center;
+
+/* Sign in/Sign up*/
+
+.SignInContainer{
+    width: 100%;
     height: 100vh;
+    background-image: linear-gradient(rgba(0,0,50,0.8), rgba(0,0,50,0.8)), url(/assets/img/Med\ People.jpg);
+    background-position: center;
+    background-size: cover;
+    position: relative;
 }
 
-.signup-container  {
+.form-box{
+    width: 90%;
+    max-width: 450px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     background: white;
-    padding: 20px;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-    border-radius: 10px;
-    width: 350px;
+    padding: 50px 60px 70px;
     text-align: center;
 }
 
-.signup-container h2 {
-    margin-bottom: 20px;
-    color: #333;
+.form-box h1{
+    font-size: 30px;
+    margin-bottom: 60px;
 }
 
-.signup-container input {
-    width: 100%;
-    padding: 10px;
-    margin: 10px 0;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-}
-
-.signup-container button {
-    width: 100%;
-    padding: 10px;
-    background: #4CAF50;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 16px;
-}
-
-.signup-container button:hover {
-    background: #45a049;
-}
-
-.signup-container .success-message {
-    margin-top: 15px;
-    color: green;
-    font-size: 14px;
-}
-
-/*footer*/
+/* footer */
 footer{
     font-size: small;
     color: white;
@@ -189,4 +180,92 @@ footer{
     width: 60%;
     margin: auto;
     font-family: arial;
+}
+
+/* Responsive Media Queries */
+
+/* 1920x1080 (Default large screens) */
+@media screen and (max-width: 1920px) {
+    .overlay {
+        width: 60%;
+    }
+    .overlay h1 {
+        font-size: 2.8rem;
+    }
+    .overlay p {
+        font-size: 1.3rem;
+    }
+    .team-member {
+        width: 200px;
+    }
+}
+
+/* 1440x1000 */
+@media screen and (max-width: 1440px) {
+    .overlay {
+        width: 65%;
+    }
+    .overlay h1 {
+        font-size: 2.5rem;
+    }
+    .overlay p {
+        font-size: 1.2rem;
+    }
+    .team-member {
+        width: 180px;
+    }
+}
+
+/* 1024x768 */
+@media screen and (max-width: 1024px) {
+    .overlay {
+        width: 75%;
+        padding: 40px;
+    }
+    .overlay h1 {
+        font-size: 2rem;
+    }
+    .overlay p {
+        font-size: 1.1rem;
+    }
+    .team-container {
+        flex-wrap: wrap;
+    }
+    .team-member {
+        width: 160px;
+    }
+}
+
+/* 375x667 (Mobile screens) */
+@media screen and (max-width: 375px) {
+    .overlay {
+        width: 90%;
+        padding: 30px;
+    }
+    .overlay h1 {
+        font-size: 1.8rem;
+    }
+    .overlay p {
+        font-size: 1rem;
+    }
+    .team-container {
+        flex-direction: column;
+        align-items: center;
+    }
+    .team-member {
+        width: 80%;
+    }
+    ul {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+    }
+    li {
+        float: none;
+    }
+    .footer-container {
+        flex-direction: column;
+        text-align: center;
+        gap: 20px;
+    }
 }
