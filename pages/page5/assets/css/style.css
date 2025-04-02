@@ -15,6 +15,11 @@ main{
     background-color: rgb(255, 255, 255);
     text-align: center;
     font-family: Arial, Helvetica, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: #f4f4f4;
 }
 
 /* header */
@@ -102,100 +107,51 @@ ul {
   }
 
 /* Sign in/Sign up*/
-
-.SignInContainer{
-    width: 100%;
-    height: 100vh;
-    background-image: linear-gradient(rgba(0,0,50,0.8), rgba(0,0,50,0.8)), url(../img/Med\ People.jpg);
-    background-position: center;
-    background-size: cover;
-    position: relative;
-}
-
-.form-box{
-    width: 90%;
-    max-width: 450px;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+.container {
+    width: 350px;
+    padding: 20px;
     background: white;
-    padding: 50px 60px 70px;
     text-align: center;
+    box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
+    border-radius: 5px;
 }
 
-.form-box h1{
-    font-size: 30px;
-    margin-bottom: 60px;
-    color: rgb(0, 2, 97);
-    position: relative;
-}
-
-.form-box h1::after{
-    content: '';
-    width: 30px;
-    height: 4px;
-    border-radius: 3px;
-    background: rgb(0, 11, 109);
-    position: absolute;
-    bottom: -12px;
-    left: 50%;
-    transform: translateX(-50%);
-}
-
-.input-field{
-    background: #eaeaea;
-    margin: 15px 0;
-    border-radius: 3px;
-    display: flex;
-    align-items: center;
-    max-height: 65px;
-    transition: max-height 0.5s;
-    overflow: hidden;
-    
-}
-
-input{
+input {
     width: 100%;
-    background: transparent;
-    border: 0;
-    outline: 0;
-    padding: 18px 15px;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
 }
 
-form p{
-    text-align: left;
-    font-size: 13px;
-} 
-
-form p a{
-     text-decoration: none;
-     color: rgb(0, 12, 78);
-}
-
-.btn-field{
+button {
     width: 100%;
-    display: flex;
-    justify-content: space-between;
-    padding-top: 25px;
-}
-
-.btn-field button{
-    flex-basis: 48%;
-    background: rgb(0, 12, 78);
-    color: #fff;
-    height: 40px;
-    border-radius: 20px;
-    border: 0;
-    outline: 0;
+    padding: 10px;
+    margin: 10px 0;
+    border: none;
     cursor: pointer;
-    transition: background 1s;
+    background: #3674B5;
+    color: white;
+    border-radius: 5px;
 }
 
-.btn-field button.disable{
-    background: #eaeaea;
-    color: #555;
+button:hover {
+    background: #25527A;
+}
 
+#error-msg {
+    color: red;
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+
+#toggleText {
+    margin-top: 10px;
+}
+
+#toggleText a {
+    color: #3674B5;
+    cursor: pointer;
 }
 
 

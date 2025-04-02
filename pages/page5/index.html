@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Medisync</title>
     <link rel="stylesheet" href="assets/css/style.css">
-    <script src="./assets/js/script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 </head>
 <body>
     <!-----header-->
@@ -31,34 +31,19 @@
     </header>
 
     <main>
-        <div class="SignInContainer">
-            <div class="form-box">
-                <h1 id="title">Sign Up</h1>
-                <form>
-                    <div class="input-group">
-                        <div class="input-field" id="nameField">
-                            <input type="text" placeholder="Name">
-                        </div>
-                    </div>
-
-                    <div class="input-group">
-                        <div class="input-field">
-                            <input type="email" placeholder="Email">
-                        </div>
-                    </div>
-
-                    <div class="input-group">
-                        <div class="input-field">
-                            <input type="password" placeholder="Password">
-                        </div>
-                        <p>Lost password? <a href="#">Click Here!</a></p>
-                    </div>
-                    <div class="btn-field">
-                        <button type="button" id="signupBtn">Sign up</button>
-                        <button type="button" id="signinBtn" class="disable">Sign in</button>
-                    </div>
-                </form>
-            </div>
+        <div class="container">
+            <h1 id="title">Sign Up</h1>
+            <form id="userForm">
+                <div id="nameField">
+                    <input type="text" id="name" placeholder="Full Name">
+                </div>
+                <input type="email" id="email" placeholder="Email">
+                <input type="password" id="password" placeholder="Password">
+                <p id="error-msg"></p>
+                <button type="submit" id="submitBtn">Sign Up</button>
+            </form>
+            <p id="toggleText">Already have an account? <a href="#" id="toggleForm">Sign In</a></p>
+            <div id="output"></div>
         </div>
     </main>
 
