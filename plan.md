@@ -125,7 +125,65 @@ Clear CTAs (Call-to-Actions) for ease of use.
 
 -ENTITY RELATIONAL DATABASE (ERD)-
 
+User (UserID, Name, Email, Password, Contact Info):
+
+Has many Appointments
+
+Has many Medication Reminders
+
+Has many Symptom Logs
+
+
+Appointment (AppointmentID, UserID, Date, Time, Doctor, Location):
+
+Belongs to a User
+
+
+Medication Reminder (ReminderID, UserID, Medicine Name, Time, Frequency):
+
+Belongs to a User
+
+
+Symptom Log (LogID, UserID, Date, Symptom Description, Severity):
+
+Belongs to a User
+
+
 
 
 -DATA FLOW-
+
+User Registration & Authentication:
+
+User signs up or logs in.
+
+User data is validated and stored in the database.
+
+Upon login, user details are retrieved for session management.
+
+2. Appointment Scheduling:
+
+User selects a date and time for an appointment.
+
+The system stores the appointment details in the database.
+
+Appointments are retrieved and displayed on the calendar.
+
+3. Medication Reminder:
+
+User sets a reminder for medication.
+
+The system saves the reminder and triggers notifications when the time comes.
+
+4. Symptom Logging:
+
+User inputs symptoms.
+
+Data is saved and retrieved for tracking trends over time.
+
+5. Data Retrieval & Display:
+
+Dashboard fetches and displays relevant user data.
+
+Lists and calendars dynamically update based on stored information.
 
