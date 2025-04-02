@@ -1,5 +1,3 @@
-// Medication Reminder with JSON Storage
-
 // Function to update the current time
 function updateCurrentTime() {
     const currentTimeElement = document.getElementById('currentTime');

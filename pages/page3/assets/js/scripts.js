@@ -1,14 +1,11 @@
-//Appointmemnt Tracker
-// Appointment Reminder System
 let events = JSON.parse(localStorage.getItem("events")) || []; // Load events from local storage
 
-// Get elements
 let eventDateInput = document.getElementById("eventDate");
 let eventTitleInput = document.getElementById("eventTitle");
 let eventDescriptionInput = document.getElementById("eventDescription");
 let reminderList = document.getElementById("reminderList");
 
-let eventIdCounter = events.length ? Math.max(...events.map(e => e.id)) + 1 : 1; // Set unique ID
+let eventIdCounter = events.length ? Math.max(...events.map(e => e.id)) + 1 : 1; 
 
 // Function to add an event
 function addEvent() {
@@ -20,7 +17,6 @@ function addEvent() {
         let eventId = eventIdCounter++;
         events.push({ id: eventId, date, title, description });
 
-        // Save to local storage
         localStorage.setItem("events", JSON.stringify(events));
 
         showCalendar(currentMonth, currentYear);
@@ -165,31 +161,3 @@ function daysInMonth(iMonth, iYear) {
 
 // Show calendar initially
 showCalendar(currentMonth, currentYear);
-
-//Symptom logger
-// Initialize symptoms array
-let symptoms = [];
-
-// Function to update the current time
-function updateCurrentTime() {
-    const currentTimeElement = document.getElementById('currentTime');
-    const currentTime = new Date();
-    const hours = currentTime.getHours().toString().padStart(2, '0');
-    const minutes = currentTime.getMinutes().toString().padStart(2, '0');
-    const seconds = currentTime.getSeconds().toString().padStart(2, '0');
-    currentTimeElement.textContent = `Time: ${hours}:${minutes}:${seconds}`;
-}
-
-// Function to save symptoms to JSON (localStorage)
-function saveSymptomsToJSON() {
-    localStorage.setItem("symptoms", JSON.stringify(symptoms));
-}
-
-// Function to load symptoms from JSON (localStorage)
-function loadSymptomsFromJSON() {
-    let symptomsJSON = localStorage.getItem("symptoms");
-    if (symptomsJSON) {
-        symptoms = JSON.parse(symptomsJSON);
-        displaySymptoms();
-    }
-}
