@@ -9,78 +9,67 @@
     <script src="../page3/assets/js/scripts.js" defer></script>
 </head>
 <body>
-    <!-----header-->
-        <header>
-         <!---Logo-->
+    <header>
         <img src="../page1/assets/img/new medisync logo.png" alt="MediSyncLogo">
-    </div>
-          <!----Navbar-->
         <ul>
             <li><a href="../page5/index.html">Sign up</a></li>
-            <li><div class="dropdown">
-                <button class="dropbtn">Care Services
-                  <i class="fa fa-caret-down"></i>
-                </button>
-                <div class="dropdown-content">
-                  <a href="../page2/index.html">Appointment & Medical Tracker</a>
-                  <a href="../page3/index.html">Clinic & Hospital Listing</a>
-                  <a href="../page4/index.html">Personal Health Records</a>
-                </div></li>
+            <li>
+                <div class="dropdown">
+                    <button class="dropbtn">Care Services <i class="fa fa-caret-down"></i></button>
+                    <div class="dropdown-content">
+                        <a href="../page2/index.html">Appointment & Medical Tracker</a>
+                        <a href="../page3/index.html">Clinic & Hospital Listing</a>
+                        <a href="../page4/index.html">Personal Health Records</a>
+                    </div>
+                </div>
+            </li>
             <li><a href="../page1/index.html">About us</a></li>
             <li><a href="../../index.html">Home</a></li>
         </ul>
     </header>
-    
-    <div class="container1">
-    <h2>Clinic & Hospital Listings</h2>
-    
-    <h3>Add Clinic or Hospital</h3>
-    <form id="addClinicForm">
-        <input type="text" id="name" placeholder="Clinic Name" required>
-        <input type="text" id="location" placeholder="Location" required>
-        <input type="number" id="availableSlots" placeholder="Available Slots" required>
-        <input type="text" id="contact" placeholder="Contact Info" required>
-        <button type="submit">Add Clinic</button>
-    </form>
-    
-    <h3>Search Clinics</h3>
-    <input type="text" id="searchLocation" placeholder="Search by Location">
-    <input type="date" id="searchDate">
-    <button id="searchClinicsBtn">Search</button>
-    
-    <h3>Clinic List</h3>
-    <ul id="clinicList"></ul>
 
-    </div>
-    
-    <!-------footer-->
+    <main> <!-- Wrapped for centering -->
+        <div class="container1">
+            <h2>Clinic & Hospital Listings</h2>
+
+            <h3>Add Clinic or Hospital</h3>
+            <form id="addClinicForm">
+                <input type="text" id="name" placeholder="Clinic Name" required>
+                <input type="text" id="location" placeholder="Location" required>
+                <input type="number" id="availableSlots" placeholder="Available Slots" required>
+                <input type="text" id="contact" placeholder="Contact Info" required>
+                <button type="submit">Add Clinic</button>
+            </form>
+
+            <h3>Search Clinics</h3>
+            <input type="text" id="searchLocation" placeholder="Search by Location">
+            <input type="date" id="searchDate">
+            <button id="searchClinicsBtn">Search</button>
+
+            <h3>Clinic List</h3>
+            <ul id="clinicList"></ul>
+        </div>
+    </main>
+
     <footer>
         <div class="footer-container">
-            <div class="footer-box1">
-                <p>Care on demand at your command™</p>
-            </div>
-    
+            <div class="footer-box1"><p>Care on demand at your command™</p></div>
             <div class="footer-box2">
-                <p>Social Media: </p>
-                <p>Twitter: @MediSync </p>
+                <p>Social Media:</p>
+                <p>Twitter: @MediSync</p>
                 <p>Facebook: The Medisync</p>
                 <p>Instagram: Medi_Sync</p>
             </div>
-    
             <div class="footer-box3">
                 <p>Contact us:</p>
-                <p>Phone number: 0932 812 4719</p>
+                <p>Phone: 0932 812 4719</p>
                 <p>Email: medisyncorp@gmail.com</p>
                 <p>Address: 643 Nicanor street, Sampaloc Metro Manila</p>
             </div>
         </div>
         <hr>
         <div class="footer2">
-            <p>
-                A health tracker app tailored for chronic illness management, featuring symptom logging, medication reminders, and doctor appointment tracking.
-            </p>
+            <p>A health tracker app tailored for chronic illness management.</p>
         </div>
-
     </footer>
 </body>
-</html>
