@@ -125,6 +125,30 @@ Clear CTAs (Call-to-Actions) for ease of use.
 
 -ENTITY RELATIONAL DATABASE (ERD)-
 
+User (UserID, Name, Email, Password, Contact Info):
+
+Has many Appointments
+
+Has many Medication Reminders
+
+Has many Symptom Logs
+
+
+Appointment (AppointmentID, UserID, Date, Time, Doctor, Location):
+
+Belongs to a User
+
+
+Medication Reminder (ReminderID, UserID, Medicine Name, Time, Frequency):
+
+Belongs to a User
+
+
+Symptom Log (LogID, UserID, Date, Symptom Description, Severity):
+
+Belongs to a User
+
+
 
 
 -DATA FLOW-
