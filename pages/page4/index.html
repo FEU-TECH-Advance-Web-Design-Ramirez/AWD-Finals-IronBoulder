@@ -3,94 +3,52 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MediSync</title>
-    <link rel="stylesheet" href="assets/css/style.css">
-    <script src="../page4/assets/js/script.js"></script>
+    <title>MediSync - Health Records</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="../page4/assets/js/scripts.js" defer></script>
 </head>
 <body>
-    <!-----header-->
-   <div class ="navdiv">
     <header>
-        <!---Logo-->
-            <img src="../page1/assets/img/new medisync logo.png" alt="MediSync Logo">
-          <!----Navbar-->
-          <ul>
-            <li><a href="../page5/index.html">Sign up</a></li>
-            <li><div class="dropdown">
-                <button class="dropbtn">Care Services
-                  <i class="fa fa-caret-down"></i>
-                </button>
-                <div class="dropdown-content">
-                  <a href="../page2/index.html">Symptom Logger</a>
-                  <a href="../page3/index.html">Appointment Tracker</a>
-                  <a href="../page4/index.html">Medication Reminder</a>
-                </div></li>
-            <li><a href="../page1/index.html">About us</a></li>
-            <li><a href="../../index.html">Home</a></li>
-        </ul>
+        <h1>Personal Health Records</h1>
     </header>
-</div>
-    <!-----Content-->
-    <div class="Medication-reminder">
-        <script src="../page4/assets/js/scripts.js"></script>
-        <div class="container">
-            <div class="header">
-                <h1>Mediction Reminder</h1>
-    
-                <div class="time" id="currentTime">
-                    <!-- Time will be displayed here -->
-                </div>
-            </div>
-    
-            <div class="reminder-input-container">
-                <div class="medicine-name">
-                    <label for="medicineName">Medicine Name:</label>
-                    <input type="text" id="medicineName" placeholder="Enter medicine name">
-                </div>
-    
-                <div class="time-reminder">
-                    <label for="reminderTime">Reminder Time:</label>
-                    <input type="time" id="reminderTime">
-                </div>
-    
-                <button class="add-reminder-btn" onclick="addReminder()">Add Reminder</button>
-            </div>
-    
-            <div class="reminder-container">
-                <ul class="reminder-list" id="reminders">
-                    <!-- Reminders will be added here -->
-                </ul>
-            </div>
-        </div>
-    </div>
-    <!-------footer-->
-    <footer>
-        <div class="footer-container">
-            <div class="footer-box1">
-                <p>Care on demand at your command™</p>
-            </div>
-    
-            <div class="footer-box2">
-                <p>Social Media: </p>
-                <p>Twitter: @MediSync </p>
-                <p>Facebook: The Medisync</p>
-                <p>Instagram: Medi_Sync</p>
-            </div>
-    
-            <div class="footer-box3">
-                <p>Contact us:</p>
-                <p>Phone number: 0932 812 4719</p>
-                <p>Email: medisyncorp@gmail.com</p>
-                <p>Address: 643 Nicanor street, Sampaloc Metro Manila</p>
-            </div>
-        </div>
-        <hr>
-        <div class="footer2">
-            <p>
-                A health tracker app tailored for chronic illness management, featuring symptom logging, medication reminders, and doctor appointment tracking.
-            </p>
-        </div>
 
-    </footer>
+    <main>
+        <section>
+            <h2>Create Health Record</h2>
+            <form id="createRecordForm">
+                <input type="text" id="userId" placeholder="User ID" required>
+                <select id="type">
+                    <option value="symptom">Symptom</option>
+                    <option value="log">Log</option>
+                </select>
+                <input type="text" id="description" placeholder="Description" required>
+                <input type="date" id="date" required>
+                <button type="submit">Create Record</button>
+            </form>
+        </section>
+
+        <section>
+            <h2>View Health Records</h2>
+            <input type="text" id="fetchUserId" placeholder="User ID">
+            <button onclick="getRecords()">Get Records</button>
+            <ul id="recordsList"></ul>
+        </section>
+
+        <section>
+            <h2>Update Health Record</h2>
+            <form id="updateRecordForm">
+                <input type="text" id="recordId" placeholder="Record ID" required>
+                <input type="text" id="updateDescription" placeholder="New Description" required>
+                <button type="submit">Update Record</button>
+            </form>
+        </section>
+
+        <section>
+            <h2>Delete Health Record</h2>
+            <input type="text" id="deleteRecordId" placeholder="Record ID">
+            <button onclick="deleteRecord()">Delete Record</button>
+        </section>
+    </main>
 </body>
 </html>
