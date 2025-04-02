@@ -1,163 +1,93 @@
-let events = JSON.parse(localStorage.getItem("events")) || []; // Load events from local storage
+const API_BASE_URL = "https://demo-api-skills.vercel.app/api/HealthTracker";
 
-let eventDateInput = document.getElementById("eventDate");
-let eventTitleInput = document.getElementById("eventTitle");
-let eventDescriptionInput = document.getElementById("eventDescription");
-let reminderList = document.getElementById("reminderList");
+// Add Clinic
+document.getElementById("addClinicForm").addEventListener("submit", async function (e) {
+    e.preventDefault();
 
-let eventIdCounter = events.length ? Math.max(...events.map(e => e.id)) + 1 : 1; 
+    const clinicData = {
+        name: document.getElementById("name").value.trim(),
+        location: document.getElementById("location").value.trim(),
+        availableSlots: parseInt(document.getElementById("availableSlots").value),
+        contact: document.getElementById("contact").value.trim()
+    };
 
-// Function to add an event
-function addEvent() {
-    let date = eventDateInput.value;
-    let title = eventTitleInput.value;
-    let description = eventDescriptionInput.value;
+    console.log("Sending Data:", clinicData); // Debugging
 
-    if (date && title) {
-        let eventId = eventIdCounter++;
-        events.push({ id: eventId, date, title, description });
+    try {
+        const response = await fetch(`${API_BASE_URL}/clinics`, {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(clinicData)
+        });
 
-        localStorage.setItem("events", JSON.stringify(events));
+        const responseData = await response.json(); // Get response data
+        console.log("API Response:", responseData); // Debugging
 
-        showCalendar(currentMonth, currentYear);
-        eventDateInput.value = "";
-        eventTitleInput.value = "";
-        eventDescriptionInput.value = "";
-        displayReminders();
-    }
-}
-
-// Function to delete an event
-function deleteEvent(eventId) {
-    events = events.filter(event => event.id !== eventId);
-    localStorage.setItem("events", JSON.stringify(events));
-    showCalendar(currentMonth, currentYear);
-    displayReminders();
-}
-
-// Function to display reminders
-function displayReminders() {
-    reminderList.innerHTML = "";
-    events.forEach(event => {
-        let listItem = document.createElement("li");
-        listItem.innerHTML = `<strong>${event.title}</strong> - ${event.description} on ${new Date(event.date).toLocaleDateString()}`;
-
-        let deleteButton = document.createElement("button");
-        deleteButton.className = "delete-event";
-        deleteButton.textContent = "Delete";
-        deleteButton.onclick = () => deleteEvent(event.id);
-
-        listItem.appendChild(deleteButton);
-        reminderList.appendChild(listItem);
-    });
-}
-
-// Date handling
-let today = new Date();
-let currentMonth = today.getMonth();
-let currentYear = today.getFullYear();
-
-let selectYear = document.getElementById("year");
-let selectMonth = document.getElementById("month");
-
-// Populate years
-function generateYearRange(start, end) {
-    return [...Array(end - start + 1).keys()].map(i => `<option value="${start + i}">${start + i}</option>`).join("");
-}
-document.getElementById("year").innerHTML = generateYearRange(1970, 2050);
-
-// Calendar rendering
-let calendar = document.getElementById("calendar-body");
-let months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
-
-document.getElementById("thead-month").innerHTML = "<tr>" + ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"].map(d => `<th>${d}</th>`).join("") + "</tr>";
-let monthAndYear = document.getElementById("monthAndYear");
-
-function next() {
-    currentYear = currentMonth === 11 ? currentYear + 1 : currentYear;
-    currentMonth = (currentMonth + 1) % 12;
-    showCalendar(currentMonth, currentYear);
-}
-
-function previous() {
-    currentYear = currentMonth === 0 ? currentYear - 1 : currentYear;
-    currentMonth = currentMonth === 0 ? 11 : currentMonth - 1;
-    showCalendar(currentMonth, currentYear);
-}
-
-function jump() {
-    currentYear = parseInt(selectYear.value);
-    currentMonth = parseInt(selectMonth.value);
-    showCalendar(currentMonth, currentYear);
-}
-
-function showCalendar(month, year) {
-    let firstDay = new Date(year, month, 1).getDay();
-    calendar.innerHTML = "";
-    monthAndYear.innerHTML = `${months[month]} ${year}`;
-    selectYear.value = year;
-    selectMonth.value = month;
-
-    let date = 1;
-    for (let i = 0; i < 6; i++) {
-        let row = document.createElement("tr");
-        for (let j = 0; j < 7; j++) {
-            if (i === 0 && j < firstDay) {
-                row.appendChild(document.createElement("td"));
-            } else if (date > daysInMonth(month, year)) {
-                break;
-            } else {
-                let cell = document.createElement("td");
-                cell.setAttribute("data-date", date);
-                cell.setAttribute("data-month", month + 1);
-                cell.setAttribute("data-year", year);
-                cell.className = "date-picker";
-                cell.innerHTML = `<span>${date}</span>`;
-
-                if (date === today.getDate() && year === today.getFullYear() && month === today.getMonth()) {
-                    cell.classList.add("selected");
-                }
-
-                if (hasEventOnDate(date, month, year)) {
-                    cell.classList.add("event-marker");
-                    cell.appendChild(createEventTooltip(date, month, year));
-                }
-
-                row.appendChild(cell);
-                date++;
-            }
+        if (!response.ok) {
+            throw new Error(responseData.message || "Failed to add clinic.");
         }
-        calendar.appendChild(row);
+
+        alert("Clinic added successfully!");
+        document.getElementById("addClinicForm").reset();
+        fetchClinics();
+    } catch (error) {
+        console.error("Error:", error);
+        alert(error.message);
     }
+});
 
-    displayReminders();
+// Fetch Clinics
+async function fetchClinics() {
+    try {
+        const response = await fetch(`${API_BASE_URL}/clinics`);
+        if (!response.ok) {
+            throw new Error("Failed to fetch clinics.");
+        }
+        const clinics = await response.json();
+        console.log("Fetched Clinics:", clinics); // Debugging
+
+        const clinicList = document.getElementById("clinicList");
+        clinicList.innerHTML = "";
+
+        clinics.forEach(clinic => {
+            const li = document.createElement("li");
+            li.textContent = `${clinic.name} - ${clinic.location}`;
+            clinicList.appendChild(li);
+        });
+    } catch (error) {
+        console.error(error);
+    }
 }
 
-function createEventTooltip(date, month, year) {
-    let tooltip = document.createElement("div");
-    tooltip.className = "event-tooltip";
-    getEventsOnDate(date, month, year).forEach(event => {
-        let eventElement = document.createElement("p");
-        eventElement.innerHTML = `<strong>${event.title}</strong> - ${event.description} on ${new Date(event.date).toLocaleDateString()}`;
-        tooltip.appendChild(eventElement);
-    });
-    return tooltip;
-}
+// Search Clinics
+document.getElementById("searchClinicsBtn").addEventListener("click", async function () {
+    const location = document.getElementById("searchLocation").value.trim();
+    const date = document.getElementById("searchDate").value;
 
-function getEventsOnDate(date, month, year) {
-    return events.filter(event => {
-        let eventDate = new Date(event.date);
-        return eventDate.getDate() === date && eventDate.getMonth() === month && eventDate.getFullYear() === year;
-    });
-}
+    const queryParams = new URLSearchParams();
+    if (location) queryParams.append("location", location);
+    if (date) queryParams.append("date", date);
 
-function hasEventOnDate(date, month, year) {
-    return getEventsOnDate(date, month, year).length > 0;
-}
+    try {
+        const response = await fetch(`${API_BASE_URL}/clinics/search?${queryParams.toString()}`);
+        if (!response.ok) {
+            throw new Error("Failed to search clinics.");
+        }
+        const results = await response.json();
+        console.log("Search Results:", results); // Debugging
 
-function daysInMonth(iMonth, iYear) {
-    return 32 - new Date(iYear, iMonth, 32).getDate();
-}
+        const clinicList = document.getElementById("clinicList");
+        clinicList.innerHTML = "";
 
-// Show calendar initially
-showCalendar(currentMonth, currentYear);
+        results.forEach(clinic => {
+            const li = document.createElement("li");
+            li.textContent = `${clinic.name} - ${clinic.location}`;
+            clinicList.appendChild(li);
+        });
+    } catch (error) {
+        console.error(error);
+    }
+});
+
+// Load Clinics on Page Load
+window.onload = fetchClinics;

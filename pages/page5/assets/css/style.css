@@ -147,13 +147,13 @@ button:hover {
 
 #toggleText {
     margin-top: 10px;
+    margin-bottom: 10px;
 }
 
 #toggleText a {
     color: #3674B5;
     cursor: pointer;
 }
-
 
 /* footer */
 footer{

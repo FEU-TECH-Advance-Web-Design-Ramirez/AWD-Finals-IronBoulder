@@ -1,80 +1,72 @@
-// Function to update the current time
-function updateCurrentTime() {
-    const currentTimeElement = document.getElementById('currentTime');
-    const currentTime = new Date();
-    const hours = currentTime.getHours().toString().padStart(2, '0');
-    const minutes = currentTime.getMinutes().toString().padStart(2, '0');
-    const seconds = currentTime.getSeconds().toString().padStart(2, '0');
-    currentTimeElement.textContent = `Time: ${hours}:${minutes}:${seconds}`;
-}
+const API_URL = "https://demo-api-skills.vercel.app/api/HealthTracker";
 
-// Function to add a medicine reminder
-function addReminder() {
-    const medicineName = document.getElementById('medicineName').value.trim();
-    const reminderTime = document.getElementById('reminderTime').value.trim();
+// Create Health Record
+document.getElementById('createRecordForm').addEventListener('submit', async function(event) {
+    event.preventDefault();
+    const userId = document.getElementById('userId').value;
+    const type = document.getElementById('type').value;
+    const description = document.getElementById('description').value;
+    const date = document.getElementById('date').value;
 
-    if (!medicineName || !reminderTime) {
-        alert("Please enter both medicine name and time.");
-        return;
+    try {
+        const response = await axios.post(`${API_URL}/records`, {
+            userId,
+            type,
+            description,
+            date
+        });
+        alert("Record created successfully!");
+        document.getElementById('createRecordForm').reset();
+        getRecords(); // Refresh records list
+    } catch (error) {
+        console.error("Error creating record:", error.response?.data || error.message);
     }
-
-    const reminder = { medicineName, reminderTime };
-    let reminders = JSON.parse(localStorage.getItem('reminders')) || [];
-    reminders.push(reminder);
-    localStorage.setItem('reminders', JSON.stringify(reminders));
-
-    displayReminders();
-    setupAlarm(reminderTime);
-
-    document.getElementById('medicineName').value = '';
-    document.getElementById('reminderTime').value = '';
-}
-
-// Function to display reminders
-function displayReminders() {
-    const remindersList = document.getElementById('reminders');
-    remindersList.innerHTML = '';
-    let reminders = JSON.parse(localStorage.getItem('reminders')) || [];
-
-    reminders.forEach((reminder, index) => {
-        const reminderItem = document.createElement('li');
-        reminderItem.classList.add('reminder-item');
-        reminderItem.innerHTML = `
-            <div class="reminder-text">${reminder.medicineName} - ${reminder.reminderTime}</div>
-            <button class="delete-btn" onclick="deleteReminder(${index})">Delete</button>
-        `;
-        remindersList.appendChild(reminderItem);
-    });
-}
-
-// Function to delete a reminder
-function deleteReminder(index) {
-    let reminders = JSON.parse(localStorage.getItem('reminders')) || [];
-    reminders.splice(index, 1);
-    localStorage.setItem('reminders', JSON.stringify(reminders));
-    displayReminders();
-}
-
-// Function to set up the alarm for the reminder
-function setupAlarm(reminderTime) {
-    const currentTime = new Date();
-    const [hours, minutes] = reminderTime.split(':');
-    const reminderDate = new Date();
-    reminderDate.setHours(parseInt(hours), parseInt(minutes), 0, 0);
-    const timeDifference = reminderDate - currentTime;
-
-    if (timeDifference > 0) {
-        setTimeout(() => {
-            alert('⏰ Time to take your medicine!');
-        }, timeDifference);
-    }
-}
-
-// Load reminders on page load
-document.addEventListener('DOMContentLoaded', () => {
-    updateCurrentTime();
-    displayReminders();
 });
 
-// Update the current time every second
-setInterval(updateCurrentTime, 1000);
+// Get Health Records
+async function getRecords() {
+    const userId = document.getElementById('fetchUserId').value;
+    if (!userId) {
+        alert("Please enter a User ID.");
+        return;
+    }
+    
+    try {
+        const response = await axios.get(`${API_URL}/users/${userId}/records`);
+        const recordsList = document.getElementById('recordsList');
+        recordsList.innerHTML = "";
+        response.data.forEach(record => {
+            const li = document.createElement('li');
+            li.innerHTML = `
+                <strong>ID:</strong> ${record.id} | 
+                <strong>Type:</strong> ${record.type} | 
+                <strong>Description:</strong> ${record.description} | 
+                <strong>Date:</strong> ${record.date}
+                <button onclick="deleteRecord('${record.id}')">Delete</button>
+            `;
+            recordsList.appendChild(li);
+        });
+    } catch (error) {
+        console.error("Error fetching records:", error.response?.data || error.message);
+    }
+}
+
+
+// Delete Health Record
+async function deleteRecord(recordId) {
+    if (!recordId) {
+        recordId = document.getElementById('deleteRecordId').value;
+        if (!recordId) {
+            alert("Please enter a Record ID.");
+            return;
+        }
+    }
+
+    try {
+        await axios.delete(`${API_URL}/records/${recordId}`);
+        alert("Record deleted successfully!");
+        getRecords(); // Refresh records list
+    } catch (error) {
+        console.error("Error deleting record:", error.response?.data || error.message);
+    }
+}

@@ -3,13 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MediSync</title>
-    <link rel="stylesheet" href="assets/css/style.css">
-    <script src="../page4/assets/js/script.js"></script>
+    <title>Medisync</title>
+    <link rel="stylesheet" href="../page4/assets/css/style.css">
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="../page4/assets/js/scripts.js" defer></script>
 </head>
 <body>
     <!-----header-->
-   <div class ="navdiv">
     <header>
         <!---Logo-->
             <img src="../page1/assets/img/new medisync logo.png" alt="MediSync Logo">
@@ -21,48 +21,40 @@
                   <i class="fa fa-caret-down"></i>
                 </button>
                 <div class="dropdown-content">
-                  <a href="../page2/index.html">Symptom Logger</a>
-                  <a href="../page3/index.html">Appointment Tracker</a>
-                  <a href="../page4/index.html">Medication Reminder</a>
+                  <a href="../page2/index.html">Appointment & Medical Tracker</a>
+                  <a href="../page3/index.html">Clinic & Hospital Listing</a>
+                  <a href="../page4/index.html">Personal Health Records</a>
                 </div></li>
             <li><a href="../page1/index.html">About us</a></li>
             <li><a href="../../index.html">Home</a></li>
         </ul>
     </header>
-</div>
-    <!-----Content-->
-    <div class="Medication-reminder">
-        <script src="../page4/assets/js/scripts.js"></script>
-        <div class="container">
-            <div class="header">
-                <h1>Mediction Reminder</h1>
-    
-                <div class="time" id="currentTime">
-                    <!-- Time will be displayed here -->
-                </div>
-            </div>
-    
-            <div class="reminder-input-container">
-                <div class="medicine-name">
-                    <label for="medicineName">Medicine Name:</label>
-                    <input type="text" id="medicineName" placeholder="Enter medicine name">
-                </div>
-    
-                <div class="time-reminder">
-                    <label for="reminderTime">Reminder Time:</label>
-                    <input type="time" id="reminderTime">
-                </div>
-    
-                <button class="add-reminder-btn" onclick="addReminder()">Add Reminder</button>
-            </div>
-    
-            <div class="reminder-container">
-                <ul class="reminder-list" id="reminders">
-                    <!-- Reminders will be added here -->
-                </ul>
-            </div>
-        </div>
+
+    <main>
+        <div class="Container1">
+        <section>
+            <h2>Create Health Record</h2>
+            <form id="createRecordForm">
+                <input type="text" id="userId" placeholder="User ID" required>
+                <select id="type">
+                    <option value="symptom">Symptom</option>
+                    <option value="log">Log</option>
+                </select>
+                <input type="text" id="description" placeholder="Description" required>
+                <input type="date" id="date" required>
+                <button type="submit">Create Record</button>
+            </form>
+        </section>
+
+        <section>
+            <h2>View Health Records</h2>
+            <input type="text" id="fetchUserId" placeholder="User ID">
+            <button onclick="getRecords()">Get Records</button>
+            <ul id="recordsList"></ul>
+        </section>
     </div>
+    </main>
+
     <!-------footer-->
     <footer>
         <div class="footer-container">
