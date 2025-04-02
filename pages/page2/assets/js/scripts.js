@@ -59,7 +59,7 @@ document.getElementById('updateScheduleForm').addEventListener('submit', async f
     }
 
     try {
-        const response = await axios.patch(`${API_URL}/schedules/${scheduleId}`, {  // 🔹 Changed to PATCH for partial updates
+        const response = await axios.patch(`${API_URL}/schedules/${scheduleId}`, {  
             type: type || undefined,  
             title: title || undefined,
             dateTime: dateTime || undefined,
