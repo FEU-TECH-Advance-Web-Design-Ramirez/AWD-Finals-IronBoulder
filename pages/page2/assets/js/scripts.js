@@ -63,29 +63,7 @@ async function deleteSchedule(scheduleId, listItem) {
     }
 
     try {
-        const response = await axios.patch(`${API_URL}/schedules/${scheduleId}`, {  // 🔹 Changed to PATCH for partial updates
-            type: type || undefined,  
-            title: title || undefined,
-            dateTime: dateTime || undefined,
-            notes: notes || undefined
-        });
-
-        alert("✅ Schedule updated successfully!");
-    } catch (error) {
-        console.error("❌ Error updating schedule:", error.response?.data || error);
-        alert("❌ Failed to update schedule.");
-    }
-});
-
-
-
-
-// Delete Schedule
-async function deleteSchedule() {
-    const scheduleId = document.getElementById('deleteScheduleId').value;
-
-    try {
-        const response = await axios.delete(`${API_URL}/schedules/${scheduleId}`);
+        await axios.delete(`${API_URL}/schedules/${scheduleId}`);
         alert("✅ Schedule deleted successfully!");
         listItem.remove();
     } catch (error) {
