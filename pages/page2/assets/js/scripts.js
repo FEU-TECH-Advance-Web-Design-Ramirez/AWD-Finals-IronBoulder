@@ -1,99 +1,89 @@
-let symptoms = [];
+const API_URL = "https://demo-api-skills.vercel.app/api/HealthTracker";
 
-// Load symptoms from local storage on page load
-document.addEventListener("DOMContentLoaded", () => {
-    loadSymptomsFromJSON();
-    displaySymptoms();
+// Create Schedule
+document.getElementById('createScheduleForm').addEventListener('submit', async function(event) {
+    event.preventDefault();
+    
+    const userId = document.getElementById('userId').value;
+    const type = document.getElementById('type').value;
+    const title = document.getElementById('title').value;
+    const dateTime = document.getElementById('dateTime').value;
+    const notes = document.getElementById('notes').value;
+    
+    try {
+        const response = await axios.post(`${API_URL}/schedules`, {
+            userId,
+            type,
+            title,
+            dateTime,
+            notes
+        });
+        alert("✅ Schedule created successfully!");
+    } catch (error) {
+        console.error("❌ Error creating schedule:", error);
+    }
 });
 
-// Function to log a symptom
-function logSymptom() {
-    const symptomName = document.getElementById("symptomName").value;
-    const severity = document.getElementById("severity").value;
-    const notes = document.getElementById("notes").value;
-    const timestamp = new Date().toLocaleString();
+// Get Schedules
+async function getSchedules() {
+    const userId = document.getElementById('fetchUserId').value;
+    
+    try {
+        const response = await axios.get(`${API_URL}/users/${userId}/schedules`);
+        const scheduleList = document.getElementById('scheduleList');
+        scheduleList.innerHTML = "";
 
-    if (!symptomName || !severity) {
-        alert("Please enter both symptom and severity.");
+        response.data.forEach(schedule => {
+            const li = document.createElement('li');
+            li.textContent = `${schedule.type}: ${schedule.title} on ${schedule.dateTime}`;
+            scheduleList.appendChild(li);
+        });
+    } catch (error) {
+        console.error("❌ Error fetching schedules:", error);
+    }
+}
+
+// Update Schedule
+document.getElementById('updateScheduleForm').addEventListener('submit', async function(event) {
+    event.preventDefault();
+
+    const scheduleId = document.getElementById('scheduleId').value;
+    const type = document.getElementById('updateType').value;
+    const title = document.getElementById('updateTitle').value;
+    const dateTime = document.getElementById('updateDateTime').value;
+    const notes = document.getElementById('updateNotes').value;
+
+    if (!scheduleId) {
+        alert("❌ Please enter a Schedule ID.");
         return;
     }
 
-    const symptom = { symptomName, severity, notes, timestamp };
-    symptoms.push(symptom);
+    try {
+        const response = await axios.patch(`${API_URL}/schedules/${scheduleId}`, {  // 🔹 Changed to PATCH for partial updates
+            type: type || undefined,  
+            title: title || undefined,
+            dateTime: dateTime || undefined,
+            notes: notes || undefined
+        });
 
-    saveSymptomsToJSON();
-    displaySymptoms();
-
-    // Clear input fields
-    document.getElementById("symptomName").value = "";
-    document.getElementById("severity").value = "";
-    document.getElementById("notes").value = "";
-}
-
-// Function to display symptoms
-function displaySymptoms() {
-    const symptomsList = document.getElementById("symptomsList");
-    symptomsList.innerHTML = "";
-
-    symptoms.forEach((symptom, index) => {
-        const symptomItem = document.createElement("li");
-        symptomItem.classList.add("symptom-item");
-
-        symptomItem.innerHTML = `
-            <div><strong>${symptom.symptomName}</strong> (${symptom.severity})</div>
-            <div>${symptom.notes ? `Notes: ${symptom.notes}` : ""}</div>
-            <div><small>Logged: ${symptom.timestamp}</small></div>
-            <button class="delete-button" onclick="deleteSymptom(${index})">Delete</button>
-        `;
-
-        symptomsList.appendChild(symptomItem);
-    });
-}
-
-// Function to delete a symptom
-function deleteSymptom(index) {
-    symptoms.splice(index, 1);
-    saveSymptomsToJSON();
-    displaySymptoms();
-}
-
-// Function to save symptoms to local storage
-function saveSymptomsToJSON() {
-    localStorage.setItem("symptoms", JSON.stringify(symptoms));
-}
-
-// Function to load symptoms from local storage
-function loadSymptomsFromJSON() {
-    const savedSymptoms = localStorage.getItem("symptoms");
-    if (savedSymptoms) {
-        symptoms = JSON.parse(savedSymptoms);
+        alert("✅ Schedule updated successfully!");
+    } catch (error) {
+        console.error("❌ Error updating schedule:", error.response?.data || error);
+        alert("❌ Failed to update schedule.");
     }
-}
+});
 
-// Function to export symptoms to a JSON file
-function exportSymptomsToJSON() {
-    let symptomsJSON = JSON.stringify(symptoms, null, 2);
-    let blob = new Blob([symptomsJSON], { type: "application/json" });
-    let a = document.createElement("a");
-    a.href = URL.createObjectURL(blob);
-    a.download = "symptom_log.json";
-    a.click();
-}
 
-// Function to import symptoms from a JSON file
-function importSymptomsFromJSON(event) {
-    let file = event.target.files[0];
-    let reader = new FileReader();
 
-    reader.onload = function (e) {
-        try {
-            symptoms = JSON.parse(e.target.result);
-            saveSymptomsToJSON();
-            displaySymptoms();
-        } catch (error) {
-            alert("Invalid JSON file");
-        }
-    };
 
-    reader.readAsText(file);
+// Delete Schedule
+async function deleteSchedule() {
+    const scheduleId = document.getElementById('deleteScheduleId').value;
+
+    try {
+        const response = await axios.delete(`${API_URL}/schedules/${scheduleId}`);
+        alert("✅ Schedule deleted successfully!");
+    } catch (error) {
+        console.error("❌ Error deleting schedule:", error);
+    }
 }

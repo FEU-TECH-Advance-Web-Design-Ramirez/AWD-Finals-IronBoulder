@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MediSync</title>
     <link rel="stylesheet" href="../page2/assets/css/style.css">
-    <script src="../page2/assets/js/scripts.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 </head>
 <body>
     <!-----header-->
@@ -20,37 +20,73 @@
                   <i class="fa fa-caret-down"></i>
                 </button>
                 <div class="dropdown-content">
-                  <a href="../page2/index.html">Symptom Logger</a>
-                  <a href="../page3/index.html">Appointment Tracker</a>
-                  <a href="../page4/index.html">Medication Reminder</a>
+                  <a href="../page2/index.html">Appointment & Medication Reminder Scheduling</a>
+                  <a href="../page3/index.html">Clinic & Hospital Listings</a>
+                  <a href="../page4/index.html">Personal Health Records</a>
                 </div></li>
             <li><a href="../page1/index.html">About us</a></li>
             <li><a href="../../index.html">Home</a></li>
     </header>
     <!-----Content-->  
-    <div class ="Symptom-logger">
-        <div class = "lginfo">
-        <div class = "InputInfo">
-        <h1>Symptom Logger</h1>
-        <h2>Log a Symptom</h2>
-        <input type="text" id="symptomName" placeholder="Symptom Name">
-        <select id="severity">
-            <option value="">Select Severity</option>
-            <option value="Mild">Mild</option>
-            <option value="Moderate">Moderate</option>
-            <option value="Severe">Severe</option>
-        </select>
+   <main>
+    <div class = "Container1">
+        <h2>Create Schedule</h2>
+        <form id="createScheduleForm">
+            <label for="userId">User ID:</label>
+            <input type="text" id="userId" required>
     
-      <div class="notes">  
-        <textarea id="notes" placeholder="Additional Notes (optional)"></textarea>
-    </div>
-    <button class = "btn" onclick="logSymptom()">Log Symptom</button>
-    </div>
-        <h2>Logged Symptoms</h2>
-        <ul id="symptomsList"></ul>
+            <label for="type">Type:</label>
+            <select id="type" required>
+                <option value="appointment">Appointment</option>
+                <option value="medication">Medication</option>
+            </select>
     
+            <label for="title">Title:</label>
+            <input type="text" id="title" required>
+    
+            <label for="dateTime">Date & Time:</label>
+            <input type="datetime-local" id="dateTime" required>
+    
+            <label for="notes">Notes:</label>
+            <input type="text" id="notes">
+    
+            <button type="submit">Create Schedule</button>
+        </form>
+    
+        <h2>Fetch Schedules</h2>
+        <input type="text" id="fetchUserId" placeholder="Enter User ID">
+        <button onclick="getSchedules()">Get Schedules</button>
+        <ul id="scheduleList"></ul>
+    
+        <h2>Update Schedule</h2>
+        <form id="updateScheduleForm">
+            <label for="scheduleId">Schedule ID:</label>
+            <input type="text" id="scheduleId" required>
+        
+            <label for="updateType">New Type:</label>
+            <select id="updateType" required>
+                <option value="appointment">Appointment</option>
+                <option value="medication">Medication</option>
+            </select>
+        
+            <label for="updateTitle">New Title:</label>
+            <input type="text" id="updateTitle">
+        
+            <label for="updateDateTime">New Date & Time:</label>
+            <input type="datetime-local" id="updateDateTime">
+        
+            <label for="updateNotes">New Notes:</label>
+            <input type="text" id="updateNotes">
+        
+            <button type="submit">Update Schedule</button>
+        </form>
+
+        <h2>Delete Schedule</h2>
+        <input type="text" id="deleteScheduleId" placeholder="Enter Schedule ID">
+        <button onclick="deleteSchedule()">Delete Schedule</button>
+        <script src="../page2/assets/js/scripts.js"></script>
     </div>
-    </div>
+   </main>
     <!-------footer-->
     <footer>
         <div class="footer-container">
