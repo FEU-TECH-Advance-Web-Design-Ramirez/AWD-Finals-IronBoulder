@@ -1,0 +1,267 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    width: 100%;
+    height: 100%;
+    overflow-x: hidden;
+}
+
+/*content*/
+main{
+    background-color: rgb(255, 255, 255);
+    text-align: center;
+}
+/* Section 1 */
+/* Section 1: About Us */
+.section-1 {
+    background: url('../img/AboutusBG.jpg') no-repeat center center/cover;
+    height: 50vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    position: relative;
+    font-family: Arial;
+}
+
+.overlay {
+    background: rgba(0, 86, 156, 0.329); /* Dark overlay for readability */
+    padding: 55px;
+    color: white;
+    width: 75%;
+    border-radius: 15px;
+}
+
+.overlay h1 {
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+}
+
+.overlay p {
+    font-size: 1.2rem;
+}
+
+/* Section 2: Our Team */
+.section-2 {
+    background: #A9C9F5;
+    padding: 50px 0;
+    text-align: center;
+    font-family: arial;
+}
+
+.section-2 h1 {
+    font-size: 2.2rem;
+    margin-bottom: 20px;
+    color: #385F87;
+}
+
+.team-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.team-member {
+    background: white;
+    padding: 15px;
+    border-radius: 10px;
+    width: 180px;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.team-member img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+.team-member p {
+    margin-top: 10px;
+    font-weight: bold;
+    padding-bottom: 5px;
+}
+
+/* header */
+header{
+    background: #3674B5;
+    color: rgb(255, 255, 255);
+    padding: 15px;
+    font-family: arial;
+}
+/* logo */
+header img{
+    height: 40px;
+    width: 180px;
+    margin: 0;
+    padding: 0;
+    float: left;
+}
+/*Navbar*/
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #3674B5;
+  }
+  
+  li {
+    float: right;
+  }
+  
+  li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+  }
+  
+  li a:hover {
+    background-color: #4da3ff;
+  }
+/* footer */
+footer{
+    font-size: small;
+    color: white;
+    background-color: #3674B5;
+    padding: 35px;
+    height: 50%;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: center;
+    gap: 100px;
+}
+
+.footer-box1 {
+    background: #3674B5;
+    padding: 20px;
+    width: 300px;
+    text-align: left;
+    padding-bottom: 35px;
+    font-size: 1.5rem;
+}
+
+.footer-box2 {
+    background: #3674B5;
+    padding: 20px;
+    width: 300px;
+    text-align: left;
+    padding-bottom: 35px;
+    font-family: arial;
+    line-height: 1.5;
+}
+
+.footer-box3 {
+    background: #3674B5;
+    padding: 20px;
+    width: 300px;
+    text-align: left;
+    padding-bottom: 35px;
+    font-family: arial;
+    line-height: 1.5;
+}
+
+.footer2{
+    font-size: 1rem;
+    text-align: center;
+    padding-top: 10px;
+    width: 60%;
+    margin: auto;
+    font-family: arial;
+}
+
+/* Responsive Media Queries */
+
+/* 1920x1080 (Default large screens) */
+@media screen and (max-width: 1920px) {
+    .overlay {
+        width: 60%;
+    }
+    .overlay h1 {
+        font-size: 2.8rem;
+    }
+    .overlay p {
+        font-size: 1.3rem;
+    }
+    .team-member {
+        width: 200px;
+    }
+}
+
+/* 1440x1000 */
+@media screen and (max-width: 1440px) {
+    .overlay {
+        width: 65%;
+    }
+    .overlay h1 {
+        font-size: 2.5rem;
+    }
+    .overlay p {
+        font-size: 1.2rem;
+    }
+    .team-member {
+        width: 180px;
+    }
+}
+
+/* 1024x768 */
+@media screen and (max-width: 1024px) {
+    .overlay {
+        width: 75%;
+        padding: 40px;
+    }
+    .overlay h1 {
+        font-size: 2rem;
+    }
+    .overlay p {
+        font-size: 1.1rem;
+    }
+    .team-container {
+        flex-wrap: wrap;
+    }
+    .team-member {
+        width: 160px;
+    }
+}
+
+/* 375x667 (Mobile screens) */
+@media screen and (max-width: 375px) {
+    .overlay {
+        width: 90%;
+        padding: 30px;
+    }
+    .overlay h1 {
+        font-size: 1.8rem;
+    }
+    .overlay p {
+        font-size: 1rem;
+    }
+    .team-container {
+        flex-direction: column;
+        align-items: center;
+    }
+    .team-member {
+        width: 80%;
+    }
+    ul {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+    }
+    li {
+        float: none;
+    }
+    .footer-container {
+        flex-direction: column;
+        text-align: center;
+        gap: 20px;
+    }
+}
