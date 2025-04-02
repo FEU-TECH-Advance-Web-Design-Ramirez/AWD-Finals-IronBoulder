@@ -12,178 +12,120 @@ Background: A 68-year-old retiree who values staying connected, managing health 
 
 -UX FLOW-
 
+Home Page:
+
+Displays the mission and an overview of the application.
+
+Provides navigation to different sections.
+
+
+Sign-Up / Sign-In:
+
+Allows users to register and log in.
+
+Users enter name, email, and password.
+
+
+Dashboard (After Login):
+
+Provides access to different health management tools.
+
+Symptom Logger
+
+Users log symptoms, select severity, and add notes.
+
+Displays logged symptoms in a list format.
+
+
+Appointment Tracker:
+
+Users can schedule doctor appointments.
+
+Provides a calendar view for upcoming appointments.
+
+
+Medication Reminder:
+
+Users add medication names and set reminders.
+
+Displays a list of active medication reminders.
+
+
+About Us Page:
+
+Contains team information and project details.
+
+
+Footer:
+
+Displays social media links and contact information.
 
 
 -LAYOUT & NAVIGATION-
 
-Landing Page:
+Header:
 
-Header
+Logo (left)
 
-Logo ("MediSync") on the left
+Navigation menu (right)
 
-Navigation menu (right-aligned) with links to - Home, About us, Log in, and Sign up
+Home
 
+About Us
 
+Care Services (Dropdown with Symptom Logger, Appointment Tracker, Medication Reminder)
 
-Hero Section
+Sign-Up
 
-Large heading - "Stay in Control of Your Health"
+Footer:
 
-Description - "Track symptoms, manage medications, and never miss an appointment, all in one place. Our platform helps you stay organized and take charge of your well-being effortlessly."
+Company tagline
 
-"Get Started" button
+Social media links
 
-Image of a doctor (right-aligned, positioned towards the bottom of the section)
+Contact information
 
+Main Sections:
 
+About Us
 
-Welcome to the Clinic Section
+Care Services
 
-Centered text - "Welcome to the Clinic"
+User Management (Sign-up, Login)
 
-Description - "Knowing and tracking your symptoms, along with managing your medications, can help you take control of your health and well-being."
-
-
-
-Services Section
-
-Centered text - "Our Services"
-
-Service Cards (Three main services) -
-
-Log a Symptom (Image: Doctor writing on clipboard)
-
-Medication Reminder (Image: Mobile app with reminder notification)
-
-Appointment Tracker (Image: Digital calendar with appointments)
-
-
-
-Contact & Social Media Section
-
-Tagline - "Care on demand at your command™"
-
-Social Media Links:
-
-Twitter - @MediSync
-
-Facebook - The MediSync
-
-Instagram - Medi_Sync
-
-Contact Information:
-
-Phone number - 0932 812 4719
-
-Email - medisynccorp@gmail.com
-
-Address - 643 Nicanor Street, Sampaloc, Metro Manila
-
-Legal disclaimer - Brief note about health tracker app's purpose
-
-
-
-
-About us Page:
-
-Navigation Bar
-
-Positioned at the top of the page.
-
-Includes links to Home, About Us, Log In, and Sign Up.
-
-Styled with a blue background and white text.
-
-
-
-Hero Section 
-
-Background Image - A workspace with people working on computers.
-
-Transparent overlay to enhance text readability.
-
-Heading - "About Us" in large, bold white text.
-
-Description - At MediSync, we believe that managing your health should be simple, stress-free, and accessible. Our app empowers users with tools to stay on top of their well-being—whether it’s logging symptoms, setting medication reminders, or tracking medical appointments.
-
-
-Team Section
-
-Title - "Our Team" in centered, bold text.
-
-A grid-based layout featuring team members.
-
-Each team member displayed with:
-
-Profile picture.
-
-Name in bold black text.
-
-Role in a smaller, lighter font.
-
-
-Footer Section
-
-Includes tagline - "Care on demand at your command™"
-
-Social Media Information:
-
-Twitter - @MediSync
-
-Facebook - The MediSync
-
-Instagram - Medi_Sync
-
-Contact Information:
-
-Phone number - 0932 812 4719
-
-Email - medisyncorp@gmail.com
-
-Address - 643 Nicanor Street, Sampaloc, Metro Manila
-
-A brief description reinforcing MediSync’s purpose.
-
+Health Tracking Features (Symptom Logger, Appointments, Medication Reminders)
 
 
 -COLOR SCHEME & VISUAL STYLE-
 
-Landing Page:
+Primary Colors:
 
-Primary Colors - Malibu (#67BAE6), #359bd1 color code, White (#FFFFFF)
+Blue (#3A7CA5) 
 
-Accent Colors _ #9EC3EA color code
+ Malibu (#67BAE6)
 
-Typography - Clean, modern sans-serif font
+ #359bd1 color code
 
-Fonts - Arial
-Font color - White (#FFFFFF) Black (#000000)
+ Accent Colors:
+  #9EC3EA color code
 
-Buttons - Rounded corners with light blue background
-          Hover effect for user interaction
+White (#FFFFFF)
 
-Images - Professional healthcare-related visuals
-         Consistent styling for service icons
+Grey (#EAEAEA)
 
+Typography:
 
-About us Page:
+Sans-serif font for readability and clarity.
 
-Primary Colors - Malibu (67BAE6) and 359bd1 color code
+Design Approach:
 
-Accent colors - White(#FFFFFF)
+Minimalist design with intuitive UI.
 
-Typography - Bold headers for section titles.
-             Sans-serif fonts for body text.
-
-Fonts - Arial
-
-Font colors - White (#FFFFFF) and Black (#000000)
-
-Images - High-quality background image for hero section.
-         Professional team member photos with consistent styling.
-
+Clear CTAs (Call-to-Actions) for ease of use.
 
 -ENTITY RELATIONAL DATABASE (ERD)-
 
+
+
 -DATA FLOW-
+
