@@ -1,4 +1,4 @@
-const API_URL = "https://demo-api-skills.vercel.app/api/UrbanExplorer/users";
+const API_URL = "https://demo-api-skills.vercel.app/api/HealthTracker/users";
 
 let submitBtn = document.getElementById("submitBtn");
 let title = document.getElementById("title");
@@ -6,17 +6,14 @@ let nameField = document.getElementById("nameField");
 let errorMsg = document.getElementById("error-msg");
 let toggleText = document.getElementById("toggleText");
 
-// Track mode (signup or signin)
 let mode = "signup";
 
-// Function to update toggle text dynamically
 function updateToggleText() {
     toggleText.innerHTML = mode === "signup"
         ? 'Already have an account? <a href="#" id="toggleForm">Sign In</a>'
         : 'Don\'t have an account? <a href="#" id="toggleForm">Sign Up</a>';
 }
 
-// Event listener for toggling signup/signin form
 document.addEventListener("click", function (event) {
     if (event.target.id === "toggleForm") {
         event.preventDefault();
@@ -36,7 +33,6 @@ document.addEventListener("click", function (event) {
     }
 });
 
-// Handle form submission
 document.getElementById("userForm").addEventListener("submit", function (event) {
     event.preventDefault();
 
@@ -56,7 +52,6 @@ document.getElementById("userForm").addEventListener("submit", function (event) 
     }
 });
 
-// Handle Sign Up - Save email & password in API
 function handleSignUp(name, email, password) {
     axios.get(API_URL)
         .then(response => {
@@ -68,7 +63,7 @@ function handleSignUp(name, email, password) {
                 return;
             }
 
-            axios.post(API_URL, { name, email, password }) // 🔹 Now saves password
+            axios.post(API_URL, { name, email, password })
                 .then(() => {
                     alert("User registered successfully!");
                     document.getElementById("userForm").reset();
@@ -85,7 +80,6 @@ function handleSignUp(name, email, password) {
         });
 }
 
-// Handle Sign In - Check password from API
 function handleSignIn(email, password) {
     axios.get(API_URL)
         .then(response => {
@@ -97,7 +91,7 @@ function handleSignIn(email, password) {
                 return;
             }
 
-            if (user.password !== password) {  // 🔹 Now correctly checks password
+            if (user.password !== password) {  // 🔹 
                 errorMsg.textContent = "Incorrect password.";
                 return;
             }
@@ -112,7 +106,6 @@ function handleSignIn(email, password) {
         });
 }
 
-// DELETE user function
 function deleteUser(userId) {
     if (!confirm("Are you sure you want to delete this user?")) return;
 
@@ -126,7 +119,6 @@ function deleteUser(userId) {
         });
 }
 
-// Fetch and display users (hide passwords)
 function fetchUsers() {
     axios.get(API_URL)
         .then(response => {
@@ -148,5 +140,4 @@ function fetchUsers() {
         });
 }
 
-// Load users on page load
 document.addEventListener("DOMContentLoaded", fetchUsers);
