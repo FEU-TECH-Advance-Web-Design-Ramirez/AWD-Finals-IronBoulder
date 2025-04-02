@@ -98,41 +98,34 @@ Health Tracking Features (Symptom Logger, Appointments, Medication Reminders)
 
 -COLOR SCHEME & VISUAL STYLE-
 
-Landing Page:
+Primary Colors:
 
-Primary Colors - Malibu (#67BAE6), #359bd1 color code, White (#FFFFFF)
+Blue (#3A7CA5) 
 
-Accent Colors _ #9EC3EA color code
+ Malibu (#67BAE6)
 
-Typography - Clean, modern sans-serif font
+ #359bd1 color code
 
-Fonts - Arial
-Font color - White (#FFFFFF) Black (#000000)
+ Accent Colors:
+  #9EC3EA color code
 
-Buttons - Rounded corners with light blue background
-          Hover effect for user interaction
+White (#FFFFFF)
 
-Images - Professional healthcare-related visuals
-         Consistent styling for service icons
+Grey (#EAEAEA)
 
+Typography:
 
-About us Page:
+Sans-serif font for readability and clarity.
 
-Primary Colors - Malibu (67BAE6) and 359bd1 color code
+Design Approach:
 
-Accent colors - White(#FFFFFF)
+Minimalist design with intuitive UI.
 
-Typography - Bold headers for section titles.
-             Sans-serif fonts for body text.
-
-Fonts - Arial
-
-Font colors - White (#FFFFFF) and Black (#000000)
-
-Images - High-quality background image for hero section.
-         Professional team member photos with consistent styling.
-
+Clear CTAs (Call-to-Actions) for ease of use.
 
 -ENTITY RELATIONAL DATABASE (ERD)-
 
+
+
 -DATA FLOW-
+
