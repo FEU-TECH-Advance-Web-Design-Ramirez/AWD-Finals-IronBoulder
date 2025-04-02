@@ -1,4 +1,3 @@
-//Appointmemnt Tracker
 // Appointment Reminder System
 let events = JSON.parse(localStorage.getItem("events")) || []; // Load events from local storage
 
@@ -8,7 +7,7 @@ let eventTitleInput = document.getElementById("eventTitle");
 let eventDescriptionInput = document.getElementById("eventDescription");
 let reminderList = document.getElementById("reminderList");
 
-let eventIdCounter = events.length ? Math.max(...events.map(e => e.id)) + 1 : 1; // Set unique ID
+let eventIdCounter = events.length ? Math.max(...events.map(e => e.id)) + 1 : 1; 
 
 // Function to add an event
 function addEvent() {
