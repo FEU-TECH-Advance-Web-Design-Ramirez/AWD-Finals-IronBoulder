@@ -7,7 +7,7 @@ document.getElementById('createRecordForm').addEventListener('submit', async fun
     const type = document.getElementById('type').value;
     const description = document.getElementById('description').value;
     const date = document.getElementById('date').value;
-    
+
     try {
         const response = await axios.post(`${API_URL}/records`, {
             userId,
@@ -16,50 +16,57 @@ document.getElementById('createRecordForm').addEventListener('submit', async fun
             date
         });
         alert("Record created successfully!");
+        document.getElementById('createRecordForm').reset();
+        getRecords(); // Refresh records list
     } catch (error) {
-        console.error("Error creating record:", error);
+        console.error("Error creating record:", error.response?.data || error.message);
     }
 });
 
 // Get Health Records
 async function getRecords() {
     const userId = document.getElementById('fetchUserId').value;
+    if (!userId) {
+        alert("Please enter a User ID.");
+        return;
+    }
+    
     try {
         const response = await axios.get(`${API_URL}/users/${userId}/records`);
         const recordsList = document.getElementById('recordsList');
         recordsList.innerHTML = "";
         response.data.forEach(record => {
             const li = document.createElement('li');
-            li.textContent = `${record.type}: ${record.description} on ${record.date}`;
+            li.innerHTML = `
+                <strong>ID:</strong> ${record.id} | 
+                <strong>Type:</strong> ${record.type} | 
+                <strong>Description:</strong> ${record.description} | 
+                <strong>Date:</strong> ${record.date}
+                <button onclick="deleteRecord('${record.id}')">Delete</button>
+            `;
             recordsList.appendChild(li);
         });
     } catch (error) {
-        console.error("Error fetching records:", error);
+        console.error("Error fetching records:", error.response?.data || error.message);
     }
 }
 
-// Update Health Record
-document.getElementById('updateRecordForm').addEventListener('submit', async function(event) {
-    event.preventDefault();
-    const recordId = document.getElementById('recordId').value;
-    const description = document.getElementById('updateDescription').value;
-
-    try {
-        const response = await axios.put(`${API_URL}/records/${recordId}`, { description });
-        alert("Record updated successfully!");
-    } catch (error) {
-        console.error("Error updating record:", error);
-    }
-});
 
 // Delete Health Record
-async function deleteRecord() {
-    const recordId = document.getElementById('deleteRecordId').value;
+async function deleteRecord(recordId) {
+    if (!recordId) {
+        recordId = document.getElementById('deleteRecordId').value;
+        if (!recordId) {
+            alert("Please enter a Record ID.");
+            return;
+        }
+    }
 
     try {
-        const response = await axios.delete(`${API_URL}/records/${recordId}`);
+        await axios.delete(`${API_URL}/records/${recordId}`);
         alert("Record deleted successfully!");
+        getRecords(); // Refresh records list
     } catch (error) {
-        console.error("Error deleting record:", error);
+        console.error("Error deleting record:", error.response?.data || error.message);
     }
 }
