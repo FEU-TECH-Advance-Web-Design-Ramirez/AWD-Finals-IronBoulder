@@ -20,7 +20,7 @@ main{
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 180vh;
+    height: auto;
     flex-direction: column;
 }
 
@@ -110,9 +110,11 @@ ul {
 
 /*records*/
 .Container1{
-    background-color: pink;
+    background-color: whitesmoke;
     padding: 25px;
     width: 50%;
+    margin-bottom: 20px;
+    margin-top: 20px;
 }
 
 .container {
@@ -127,12 +129,37 @@ ul {
 h2 {
     color: #333;
 }
+#scheduleList{
+    background-color: whitesmoke;
+    border-radius: 1.5rem;
+    padding: 20px;
+
+}
+button{
+    background-color: #ff4d4d;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+#scheduleList li{
+    color: white;
+    padding: 5px;
+    margin: 5px 0;
+    border-radius: 5px;
+    background-color: #007bff;
+    float: left;
+    display: block;
+    flex-direction: column;
+    width: 100%;
+}
 
 form, section {
     margin-bottom: 20px;
     display: flex;
-    flex-direction: column; /* This makes the form elements stack vertically */
-    align-items: flex-start; /* Aligns all form elements to the left */
+    flex-direction: column; 
+    align-items: flex-start;
 }
 
 input, select, button {
