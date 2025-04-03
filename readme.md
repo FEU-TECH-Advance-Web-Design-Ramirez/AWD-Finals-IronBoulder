@@ -119,11 +119,7 @@ WD-ProjectName
 | Title | Purpose | Link |
 |-|-|-|
 | Appointment Tracker image | Icon/Image for Appointment Tracker button. | https://www.istockphoto.com/photo/booking-meeting-calendar-appointment-gm1394627722-450031968?fbclid=IwY2xjawJQ0cxleHRuA2FlbQIxMAABHeQu6yD2Kbrt5rbqXkgQK1m_7oB_xg2agu4FCOiyyU0-ubADpjSIUYy8uA_aem_8W2dwv7KVjdPtwjWbMtXgw |
-
 | Medication Reminder image | Icon/Image for Medication Reminder button. | https://www.pexels.com/photo/person-holding-black-iphone-7-5077054/?fbclid=IwY2xjawJQ0eFleHRuA2FlbQIxMAABHTINzCBFey8FkLorGAnFJPi-857JKjf-QwuDBnZoQj4zPLh8GE-VVF_XDg_aem_FmRaA_kxOw4XGmmUs3rafw |
-
 | Log a Symptoms image | Icon/Image for Log a Symptoms button. | https://www.argest.com/wp-content/uploads/2021/07/Argest_Compliance-A5_flyer-2.pdf?fbclid=IwY2xjawJQ0fBleHRuA2FlbQIxMAABHTINzCBFey8FkLorGAnFJPi-857JKjf-QwuDBnZoQj4zPLh8GE-VVF_XDg_aem_FmRaA_kxOw4XGmmUs3rafw |
-
 | Female Doctor image | PNG image of a female doctor for Hero Section. | https://www.pngmart.com/image/319222?fbclid=IwY2xjawJQ0_5leHRuA2FlbQIxMAABHeQu6yD2Kbrt5rbqXkgQK1m_7oB_xg2agu4FCOiyyU0-ubADpjSIUYy8uA_aem_8W2dwv7KVjdPtwjWbMtXgw |
-
 | About us Background image  | Added a background image for Hero Section. | https://www.wildsparq.com/blog/turn-your-calling-into-your-job/ |
