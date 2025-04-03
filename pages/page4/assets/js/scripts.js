@@ -1,5 +1,14 @@
 const API_URL = "https://demo-api-skills.vercel.app/api/HealthTracker";
 
+// Auto-fill userId on page load
+document.addEventListener("DOMContentLoaded", function () {
+    const storedUserId = localStorage.getItem("loggedInUserId");
+    if (storedUserId) {
+        document.getElementById("userId").value = storedUserId;
+        document.getElementById("fetchUserId").value = storedUserId;
+    }
+});
+
 // Create Health Record
 document.getElementById('createRecordForm').addEventListener('submit', async function(event) {
     event.preventDefault();
@@ -17,13 +26,13 @@ document.getElementById('createRecordForm').addEventListener('submit', async fun
         });
         alert("Record created successfully!");
         document.getElementById('createRecordForm').reset();
-        getRecords(); // Refresh records list
+        getRecords();
     } catch (error) {
         console.error("Error creating record:", error.response?.data || error.message);
     }
 });
 
-// Get Health Records
+// Get Health Records with User Name
 async function getRecords() {
     const userId = document.getElementById('fetchUserId').value;
     if (!userId) {
@@ -32,13 +41,21 @@ async function getRecords() {
     }
     
     try {
-        const response = await axios.get(`${API_URL}/users/${userId}/records`);
+        // First fetch the user's name
+        const userResponse = await axios.get(`${API_URL}/users/${userId}`);
+        const userName = userResponse.data.name;
+        
+        // Then fetch the records
+        const recordsResponse = await axios.get(`${API_URL}/users/${userId}/records`);
         const recordsList = document.getElementById('recordsList');
-        recordsList.innerHTML = "";
-        response.data.forEach(record => {
+        
+        // Create a header with the user's name
+        recordsList.innerHTML = `<h3>Health Records for ${userName}</h3>`;
+        
+        // Display each record
+        recordsResponse.data.forEach(record => {
             const li = document.createElement('li');
             li.innerHTML = `
-                <strong>ID:</strong> ${record.id} | 
                 <strong>Type:</strong> ${record.type} | 
                 <strong>Description:</strong> ${record.description} | 
                 <strong>Date:</strong> ${record.date}
@@ -47,25 +64,16 @@ async function getRecords() {
             recordsList.appendChild(li);
         });
     } catch (error) {
-        console.error("Error fetching records:", error.response?.data || error.message);
+        console.error("Error fetching data:", error.response?.data || error.message);
     }
 }
 
-
 // Delete Health Record
 async function deleteRecord(recordId) {
-    if (!recordId) {
-        recordId = document.getElementById('deleteRecordId').value;
-        if (!recordId) {
-            alert("Please enter a Record ID.");
-            return;
-        }
-    }
-
     try {
         await axios.delete(`${API_URL}/records/${recordId}`);
         alert("Record deleted successfully!");
-        getRecords(); // Refresh records list
+        getRecords();
     } catch (error) {
         console.error("Error deleting record:", error.response?.data || error.message);
     }

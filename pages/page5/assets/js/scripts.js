@@ -64,10 +64,11 @@ function handleSignUp(name, email, password) {
             }
 
             axios.post(API_URL, { name, email, password })
-                .then(() => {
-                    alert("User registered successfully!");
+                .then(response => {
+                    const newUser = response.data;
+                    alert(`User registered successfully! ID: ${newUser.id}, Email: ${newUser.email}`);
                     document.getElementById("userForm").reset();
-                    fetchUsers();
+                    handleSignIn(email, password);
                 })
                 .catch(error => {
                     errorMsg.textContent = "Error registering user.";
@@ -91,18 +92,47 @@ function handleSignIn(email, password) {
                 return;
             }
 
-            if (user.password !== password) {  // 🔹 
+            if (user.password !== password) {  
                 errorMsg.textContent = "Incorrect password.";
                 return;
             }
 
-            alert(`Welcome back, ${user.name}!`);
+            // Store the logged-in user info in localStorage
+            localStorage.setItem("loggedInUserId", user.id);
+            localStorage.setItem("loggedInUserEmail", user.email);
+
+            alert(`Welcome back, ${user.name}! ID: ${user.id}, Email: ${user.email}`);
             document.getElementById("userForm").reset();
             errorMsg.textContent = "";
+
+            fetchUser();
         })
         .catch(error => {
             errorMsg.textContent = "Error logging in. Try again.";
             console.error("Error:", error);
+        });
+}
+
+function fetchUser() {
+    const userId = localStorage.getItem("loggedInUserId");
+    if (!userId) return;
+
+    axios.get(`${API_URL}/${userId}`)
+        .then(response => {
+            const user = response.data;
+            let outputHTML = `
+                <div>
+                    <h3>Signed In User</h3>
+                    <p><strong>Email:</strong> ${user.email}</p>
+                    <p><strong>ID:</strong> ${user.id}</p>
+                    <button onclick="deleteUser('${user.id}')">Delete Account</button>
+                </div>
+            `;
+            document.getElementById("output").innerHTML = outputHTML;
+            document.getElementById("output").style.display = "block";
+        })
+        .catch(error => {
+            console.error("Error fetching user:", error);
         });
 }
 
@@ -112,32 +142,15 @@ function deleteUser(userId) {
     axios.delete(`${API_URL}/${userId}`)
         .then(() => {
             alert("User deleted successfully!");
-            fetchUsers();
+            localStorage.removeItem("loggedInUserId");
+            localStorage.removeItem("loggedInUserEmail");
+            document.getElementById("output").style.display = "none";
         })
         .catch(error => {
             console.error("Error deleting user:", error);
         });
 }
 
-function fetchUsers() {
-    axios.get(API_URL)
-        .then(response => {
-            const users = response.data;
-            let outputHTML = "<ul style='list-style-type: none; padding: 0;'>";
-            users.forEach(user => {
-                outputHTML += `
-                    <li style='display: flex; justify-content: space-between; align-items: center; padding: 5px 0; font-size: 16px;'>
-                        📧 ${user.email}
-                        <button onclick="deleteUser('${user.id}')" style='background-color: red; color: white; border: none; padding: 5px 10px; cursor: pointer; border-radius: 5px;'>Delete</button>
-                    </li>
-                `;
-            });
-            outputHTML += "</ul>";
-            document.getElementById("output").innerHTML = outputHTML;
-        })
-        .catch(error => {
-            console.error("Error fetching users:", error);
-        });
-}
-
-document.addEventListener("DOMContentLoaded", fetchUsers);
+document.addEventListener("DOMContentLoaded", function() {
+    fetchUser();
+});
