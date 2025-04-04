@@ -1,26 +1,22 @@
 const API_URL = "https://demo-api-skills.vercel.app/api/HealthTracker";
 
 // Create Schedule
-document.getElementById('createScheduleForm').addEventListener('submit', async function(event) {
-    event.preventDefault();
-    
-    const userId = document.getElementById('userId').value;
-    const type = document.getElementById('type').value;
-    const title = document.getElementById('title').value;
-    const dateTime = document.getElementById('dateTime').value;
-    const notes = document.getElementById('notes').value;
-    
-    try {
-        const response = await axios.post(`${API_URL}/schedules`, {
-            userId,
-            type,
-            title,
-            dateTime,
-            notes
-        });
-        alert("✅ Schedule created successfully!");
-    } catch (error) {
-        console.error("❌ Error creating schedule:", error);
+document.addEventListener("DOMContentLoaded", async function () {
+    const storedUserId = localStorage.getItem("loggedInUserId");
+    if (storedUserId) {
+        try {
+            const response = await axios.get(`${API_URL}/users`);
+            const users = response.data;
+            const matchingUser = users.find(user => user.id == storedUserId);
+
+            if (matchingUser) {
+                document.getElementById("userId").value = matchingUser.name; // Show Name
+                document.getElementById("fetchUserId").value = matchingUser.name; // Display Name
+                document.getElementById("hiddenUserId").value = matchingUser.id; // Store User ID
+            }
+        } catch (error) {
+            console.error("Error fetching users:", error);
+        }
     }
 });
 
