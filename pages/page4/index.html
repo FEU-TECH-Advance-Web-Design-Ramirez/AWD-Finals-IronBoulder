@@ -36,6 +36,7 @@
             <h2>Create Health Record</h2>
             <form id="createRecordForm">
                 <input type="text" id="userId" placeholder="User ID" required>
+                <input type="hidden" id="hiddenUserId">
                 <select id="type">
                     <option value="symptom">Symptom</option>
                     <option value="log">Log</option>
@@ -46,12 +47,13 @@
             </form>
         </section>
 
-        <section>
-            <h2>View Health Records</h2>
-            <input type="text" id="fetchUserId" placeholder="User ID">
-            <button onclick="getRecords()">Get Records</button>
-            <ul id="recordsList"></ul>
-        </section>
+       <!-- View Health Records Section -->
+<section>
+    <h2>View Health Records</h2>
+    <input type="text" id="fetchUserId" placeholder="Enter User ID">
+    <button onclick="getRecords()">Get Records</button>
+    <ul id="recordsList"></ul>
+</section>
     </div>
     </main>
 
@@ -82,7 +84,6 @@
                 A health tracker app tailored for chronic illness management, featuring symptom logging, medication reminders, and doctor appointment tracking.
             </p>
         </div>
-
     </footer>
 </body>
 </html>
