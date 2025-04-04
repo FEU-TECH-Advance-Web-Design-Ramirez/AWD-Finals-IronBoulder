@@ -153,37 +153,42 @@ Belongs to a User
 
 -DATA FLOW-
 
-User Registration & Authentication:
+1. User will Sign Up or Log In:
 
-User signs up or logs in.
+    User will not have access on Appoint & Medical tracker as well as Personal Health Records if there is no account created.
 
-User data is validated and stored in the database.
+    User signs up or logs in.
 
-Upon login, user details are retrieved for session management.
+    User data is validated and stored in the database.
 
-2. Appointment Scheduling:
+    Upon login, user details are retrieved for session management.
 
-User selects a date and time for an appointment.
+2. After Login/Sign up, User can now access the Appoint & Medical tracker as well as Personal Health Records.
 
-The system stores the appointment details in the database.
+3. If user clicks Appointment and Medical Tracker, it will let:
 
-Appointments are retrieved and displayed on the calendar.
+    User selects a date and time for an appointment.
+    The system stores the appointment details in the database.
 
-3. Medication Reminder:
+    Appointments are retrieved and displayed on the calendar.
 
-User sets a reminder for medication.
+4. If user clicks Clinic and Hospital Listings, it will let:
 
-The system saves the reminder and triggers notifications when the time comes.
+    User selects Clinic Name, Location, Available Slots, and Contact Info.
 
-4. Symptom Logging:
+    After the user clicks Add Clinic, the system will store the details in the database.
 
-User inputs symptoms.
+5. If user clicks Personal Health Record, it will let:
 
-Data is saved and retrieved for tracking trends over time.
+    User Name will automatically appear.
+
+    User inputs symptoms description.
+
+    Data is saved and retrieved for tracking trends over time.
 
 5. Data Retrieval & Display:
 
-Dashboard fetches and displays relevant user data.
-
-Lists and calendars dynamically update based on stored information.
+    Dashboard fetches and displays relevant user data.
+    
+    Lists and calendars dynamically update based on stored information.
 
